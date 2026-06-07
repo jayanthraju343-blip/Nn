@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VoiceOver Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <style>body{font-family:system-ui,sans-serif}</style>
   <style>
     :root {
       --bg: #0a0a0f;
@@ -1024,5 +1025,11 @@ Write the voiceover script now:`
   window.addEventListener('load', () => { speechSynthesis.getVoices(); });
   speechSynthesis.onvoiceschanged = () => { speechSynthesis.getVoices(); };
 </script>
+
+<!-- Footer -->
+<div style="text-align:center;padding:20px 0 40px;color:#6b6b80;font-size:0.85rem;position:relative;z-index:1;">
+  Made with ❤️ by <span style="color:#ff6b35;font-weight:700;letter-spacing:0.05em;">JAYANTH</span>
+</div>
+
 </body>
 </html>
