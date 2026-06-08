@@ -7,71 +7,75 @@
 <style>
 :root{
   --bg:#0a0a0f;--surface:#13131a;--card:#1c1c28;
-  --accent:#ff6b35;--accent2:#7c3aed;--gold:#fbbf24;
+  --accent:#ff6b35;--accent2:#7c3aed;
   --text:#f0f0f5;--muted:#6b6b80;--border:#2a2a3a;
   --success:#10b981;--danger:#ef4444;--radius:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;min-height:100vh;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;min-height:100vh;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 40% at 80% 10%,rgba(124,58,237,.18) 0%,transparent 60%),radial-gradient(ellipse 50% 35% at 10% 80%,rgba(255,107,53,.13) 0%,transparent 60%);pointer-events:none;z-index:0}
-.wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:20px 14px 60px}
+.wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:20px 14px 80px}
 
-.tabs{display:flex;gap:6px;margin-bottom:22px;background:var(--surface);padding:6px;border-radius:14px;border:1px solid var(--border)}
-.tab{flex:1;padding:10px 6px;border:none;border-radius:10px;background:transparent;color:var(--muted);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;text-align:center}
+.tabs{display:flex;gap:6px;margin-bottom:20px;background:var(--surface);padding:6px;border-radius:14px;border:1px solid var(--border)}
+.tab{flex:1;padding:11px 6px;border:none;border-radius:10px;background:transparent;color:var(--muted);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;-webkit-tap-highlight-color:transparent}
 .tab.active{background:var(--card);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .page{display:none}.page.active{display:block}
 
-header{text-align:center;margin-bottom:20px;padding-top:8px}
+header{text-align:center;margin-bottom:20px;padding-top:4px}
 .logo-row{display:inline-flex;align-items:center;gap:10px;margin-bottom:8px}
-.logo-ico{width:40px;height:40px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.logo-ico{width:42px;height:42px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px}
 .logo-txt{font-size:1.5rem;font-weight:800;letter-spacing:-.5px}
 .logo-txt span{color:var(--accent)}
 header p{color:var(--muted);font-size:.85rem}
 .badges{display:flex;justify-content:center;gap:6px;margin-top:8px;flex-wrap:wrap}
 .badge{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;padding:3px 10px;border-radius:99px;font-weight:600}
 .badge.green{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);color:var(--success)}
-.badge.purple{background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.25);color:#c4b5fd}
 .badge.orange{background:rgba(255,107,53,.12);border:1px solid rgba(255,107,53,.25);color:var(--accent)}
+.badge.purple{background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.25);color:#c4b5fd}
 
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:14px}
 .card-title{font-size:.95rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 
-.upload-zone{border:2px dashed var(--border);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.02);position:relative}
+.upload-zone{border:2px dashed var(--border);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.02);position:relative;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .upload-zone:hover,.upload-zone.over{border-color:var(--accent);background:rgba(255,107,53,.05)}
-.upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 .u-icon{font-size:2rem;margin-bottom:8px}
 .upload-zone h3{font-size:.92rem;margin-bottom:4px}
-.upload-zone p{color:var(--muted);font-size:.8rem}
+.upload-zone p{color:var(--muted);font-size:.78rem}
 #vPreview{display:none;width:100%;border-radius:10px;max-height:200px;object-fit:contain;background:#000;margin-top:10px}
-.vinfo{display:none;margin-top:10px;padding:9px 12px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:8px;font-size:.82rem;color:var(--success)}
+.vinfo{display:none;margin-top:10px;padding:9px 12px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:8px;font-size:.8rem;color:var(--success)}
 
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.fg{margin-bottom:10px}
+.fg{margin-bottom:0}
 .fg label{display:block;font-size:.72rem;color:var(--muted);margin-bottom:5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-select,input[type=text],input[type=password]{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:10px 12px;font-size:.88rem;outline:none;transition:border-color .2s;-webkit-appearance:none}
+select,input[type=text],input[type=password]{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:11px 12px;font-size:.9rem;outline:none;transition:border-color .2s;-webkit-appearance:none;font-family:inherit}
 select:focus,input:focus{border-color:var(--accent)}
-.api-note{font-size:.73rem;color:var(--muted);margin-top:5px;line-height:1.5}
+.api-note{font-size:.73rem;color:var(--muted);margin-top:6px;line-height:1.6}
 .api-note a{color:var(--accent);text-decoration:none}
-.saved-ok{display:inline-block;background:rgba(16,185,129,.15);color:var(--success);font-size:.68rem;padding:2px 7px;border-radius:4px;margin-left:6px;display:none}
+.saved-ok{display:none;background:rgba(16,185,129,.15);color:var(--success);font-size:.68rem;padding:2px 7px;border-radius:4px;margin-left:6px}
+
+/* topic input */
+.topic-hint{font-size:.75rem;color:var(--muted);margin-top:6px}
 
 .music-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.mb{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:9px 6px;text-align:center;cursor:pointer;transition:all .2s;color:var(--text);font-size:.78rem;width:100%}
-.mb:hover{border-color:var(--accent2)}
+.mb{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:9px 6px;text-align:center;cursor:pointer;transition:all .2s;color:var(--text);font-size:.78rem;width:100%;-webkit-tap-highlight-color:transparent}
+.mb:active{transform:scale(.97)}
 .mb.sel{border-color:var(--accent2);background:rgba(124,58,237,.15);color:#c4b5fd}
 .mb .e{font-size:1.1rem;display:block;margin-bottom:3px}
 
-.btn-gen{width:100%;padding:15px;background:linear-gradient(135deg,var(--accent),#e55a2b);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px}
-.btn-gen:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,107,53,.35)}
-.btn-gen:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-gen{width:100%;padding:16px;background:linear-gradient(135deg,var(--accent),#e55a2b);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-gen:active{transform:scale(.98)}
+.btn-gen:disabled{opacity:.5;cursor:not-allowed;transform:none}
 
 .prog-card{display:none}
 .prog-bar-wrap{background:var(--surface);border-radius:99px;height:5px;margin-bottom:14px;overflow:hidden}
 .prog-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;width:0%;transition:width .5s}
+.prog-label{text-align:center;font-size:.8rem;color:var(--muted);margin-bottom:12px}
 .psteps{display:flex;flex-direction:column;gap:7px}
 .ps{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface);border-radius:10px;font-size:.83rem;border:1px solid var(--border);transition:all .3s}
 .ps.active{border-color:var(--accent);background:rgba(255,107,53,.06)}
 .ps.done{border-color:var(--success);background:rgba(16,185,129,.06)}
-.ps .pi{font-size:1rem;width:24px;text-align:center}
+.ps .pi{font-size:1rem;width:24px;text-align:center;flex-shrink:0}
 .ps .pt{flex:1}
 .ps .pl{font-weight:600;font-size:.83rem}
 .ps .ps2{font-size:.72rem;color:var(--muted);margin-top:1px}
@@ -79,24 +83,21 @@ select:focus,input:focus{border-color:var(--accent)}
 @keyframes sp{to{transform:rotate(360deg)}}
 
 .res-card{display:none}
-.res-video{width:100%;border-radius:10px;background:#000;max-height:250px}
+.res-video{width:100%;border-radius:10px;background:#000;max-height:240px}
 .res-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.btn-act{padding:11px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.83rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;font-weight:500}
-.btn-act:hover{border-color:var(--accent);color:var(--accent)}
+.btn-act{padding:12px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.83rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;font-weight:500;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-act:active{transform:scale(.97)}
 .btn-act.pri{background:linear-gradient(135deg,var(--accent2),#5b21b6);border-color:transparent;color:#fff}
-.btn-act.pri:hover{box-shadow:0 6px 20px rgba(124,58,237,.35);color:#fff}
 .script-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:.82rem;line-height:1.7;color:#d0d0e0;margin-top:12px;max-height:160px;overflow-y:auto;white-space:pre-wrap;display:none}
 
-/* steps */
 .steps-row{display:flex;justify-content:center;gap:5px;margin-bottom:18px;flex-wrap:wrap}
 .stp{display:flex;align-items:center;gap:4px;font-size:.75rem;color:var(--muted);font-weight:500}
 .stp.active{color:var(--accent)}.stp.done{color:var(--success)}
-.stp-n{width:19px;height:19px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700}
+.stp-n{width:20px;height:20px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700}
 .stp.active .stp-n{background:var(--accent);color:#fff}
 .stp.done .stp-n{background:var(--success);color:#fff}
-.stp-div{color:var(--border);font-size:.75rem}
+.stp-div{color:var(--border);font-size:.8rem}
 
-/* completed */
 .cv-empty{text-align:center;padding:28px 16px;color:var(--muted)}
 .cv-empty .e{font-size:2.2rem;margin-bottom:8px}
 .cv-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:10px;display:flex;gap:10px;align-items:flex-start}
@@ -106,28 +107,24 @@ select:focus,input:focus{border-color:var(--accent)}
 .cv-meta{font-size:.72rem;color:var(--muted);margin-bottom:3px}
 .cv-exp{font-size:.7rem;color:var(--danger);margin-bottom:5px}
 .cv-btns{display:flex;gap:5px;flex-wrap:wrap}
-.cv-btn{padding:4px 9px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.72rem;cursor:pointer;transition:all .2s}
-.cv-btn:hover{border-color:var(--accent);color:var(--accent)}
+.cv-btn{padding:5px 10px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.72rem;cursor:pointer}
 .cv-btn.del{color:var(--danger);border-color:rgba(239,68,68,.3)}
 
-/* settings api row */
-.api-row{display:flex;align-items:center;gap:6px;margin-bottom:5px}
-.api-tag{font-size:.68rem;padding:2px 7px;border-radius:4px;font-weight:600}
-.api-tag.g{background:rgba(16,185,129,.15);color:var(--success)}
-.api-tag.p{background:rgba(124,58,237,.15);color:#c4b5fd}
-
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 18px;font-size:.83rem;z-index:999;transition:transform .3s;white-space:nowrap;max-width:90vw;text-align:center}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 18px;font-size:.83rem;z-index:999;transition:transform .3s;max-width:88vw;text-align:center}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .toast.err{border-color:var(--danger);color:#fca5a5}
 .toast.ok{border-color:var(--success);color:#6ee7b7}
 
-footer{text-align:center;padding:16px 0 28px;color:var(--muted);font-size:.78rem;position:relative;z-index:1}
+footer{text-align:center;padding:16px 0 24px;color:var(--muted);font-size:.78rem;position:relative;z-index:1}
 footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
 
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-@media(max-width:480px){.grid2{grid-template-columns:1fr}.music-grid{grid-template-columns:repeat(2,1fr)}.res-acts{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .grid2{grid-template-columns:1fr}
+  .music-grid{grid-template-columns:repeat(2,1fr)}
+  .res-acts{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -138,11 +135,11 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
     <div class="logo-ico">🎬</div>
     <div class="logo-txt">VoiceOver<span>Studio</span></div>
   </div>
-  <p>Upload video → AI script → Voice + Music automatically</p>
+  <p>Upload video → AI writes script → Voice + Music added</p>
   <div class="badges">
     <div class="badge green">✨ 100% FREE</div>
-    <div class="badge purple">🖼️ Gemini Vision</div>
-    <div class="badge orange">⚡ Groq Script</div>
+    <div class="badge orange">⚡ Groq AI (Fast)</div>
+    <div class="badge purple">📱 Mobile Ready</div>
   </div>
 </header>
 
@@ -167,13 +164,21 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
   <div class="card">
     <div class="card-title">📹 Upload Video</div>
     <div class="upload-zone" id="uploadZone">
-      <input type="file" id="videoInput" accept="video/*"/>
+      <input type="file" id="videoInput" accept="video/*" capture="environment"/>
       <div class="u-icon">🎥</div>
       <h3>Tap to select video</h3>
       <p>MP4, MOV, AVI • Max 100MB</p>
     </div>
-    <video id="vPreview" controls></video>
+    <video id="vPreview" controls playsinline></video>
     <div class="vinfo" id="vinfo"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📝 Video Topic (Optional)</div>
+    <div class="fg">
+      <input type="text" id="topicInput" placeholder="e.g. Craftland gameplay, travel vlog, cooking..."/>
+    </div>
+    <div class="topic-hint">💡 Describe your video so AI writes a better script</div>
   </div>
 
   <div class="card">
@@ -215,19 +220,18 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
   <div class="card prog-card" id="progCard">
     <div class="card-title">⏳ Processing...</div>
     <div class="prog-bar-wrap"><div class="prog-bar" id="progBar"></div></div>
+    <div class="prog-label" id="progLabel">Starting...</div>
     <div class="psteps">
-      <div class="ps" id="ps1"><div class="pi">🎞️</div><div class="pt"><div class="pl">Extracting Frames</div><div class="ps2">Pulling key moments from video</div></div><div id="s1i"></div></div>
-      <div class="ps" id="ps2"><div class="pi">🖼️</div><div class="pt"><div class="pl">Gemini Vision Analysis</div><div class="ps2">Understanding video content</div></div><div id="s2i"></div></div>
-      <div class="ps" id="ps3"><div class="pi">⚡</div><div class="pt"><div class="pl">Groq Script Generation</div><div class="ps2">Writing voiceover narration (fast!)</div></div><div id="s3i"></div></div>
-      <div class="ps" id="ps4"><div class="pi">🎙️</div><div class="pt"><div class="pl">Voice Synthesis</div><div class="ps2">Text-to-speech conversion</div></div><div id="s4i"></div></div>
-      <div class="ps" id="ps5"><div class="pi">🎵</div><div class="pt"><div class="pl">Music Generation</div><div class="ps2">Creating copyright-free music</div></div><div id="s5i"></div></div>
-      <div class="ps" id="ps6"><div class="pi">🎬</div><div class="pt"><div class="pl">Final Merge</div><div class="ps2">Video + Voice + Music combined</div></div><div id="s6i"></div></div>
+      <div class="ps" id="ps1"><div class="pi">⚡</div><div class="pt"><div class="pl">Groq AI Script</div><div class="ps2">Writing voiceover narration</div></div><div id="s1i"></div></div>
+      <div class="ps" id="ps2"><div class="pi">🎙️</div><div class="pt"><div class="pl">Voice Synthesis</div><div class="ps2">Converting to speech</div></div><div id="s2i"></div></div>
+      <div class="ps" id="ps3"><div class="pi">🎵</div><div class="pt"><div class="pl">Music Generation</div><div class="ps2">Copyright-free background music</div></div><div id="s3i"></div></div>
+      <div class="ps" id="ps4"><div class="pi">🎬</div><div class="pt"><div class="pl">Final Merge</div><div class="ps2">Combining everything</div></div><div id="s4i"></div></div>
     </div>
   </div>
 
   <div class="card res-card" id="resCard">
     <div class="card-title">🎉 Your Video is Ready!</div>
-    <video class="res-video" id="resVideo" controls></video>
+    <video class="res-video" id="resVideo" controls playsinline></video>
     <div class="script-box" id="scriptBox"></div>
     <div class="res-acts">
       <button class="btn-act pri" onclick="dlVideo()">⬇️ Download</button>
@@ -249,48 +253,32 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
 <!-- SETTINGS -->
 <div class="page" id="page-settings">
   <div class="card">
-    <div class="card-title">🔑 API Keys (Both FREE)</div>
-
-    <div class="api-row">
-      <span class="api-tag g">Gemini</span>
-      <span style="font-size:.8rem;font-weight:600">Google Gemini Vision</span>
-      <span class="saved-ok" id="gSaved">✅ Saved</span>
-    </div>
-    <div class="fg">
-      <input type="password" id="geminiKey" placeholder="AIza..." oninput="saveKeys()"/>
-    </div>
-    <div class="api-note" style="margin-bottom:14px">
-      🆓 Get FREE: <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a> → Sign in → "Get API Key"
-    </div>
-
-    <div class="api-row">
-      <span class="api-tag p">Groq</span>
-      <span style="font-size:.8rem;font-weight:600">Groq LLaMA Script</span>
-      <span class="saved-ok" id="gqSaved">✅ Saved</span>
-    </div>
-    <div class="fg">
-      <input type="password" id="groqKey" placeholder="gsk_..." oninput="saveKeys()"/>
+    <div class="card-title">🔑 Groq API Key <span class="saved-ok" id="gqSaved">✅ Saved</span></div>
+    <div class="fg" style="margin-bottom:6px">
+      <input type="password" id="groqKey" placeholder="gsk_..." oninput="saveKey()"/>
     </div>
     <div class="api-note">
-      🆓 Get FREE: <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a> → Sign up → "Create API Key"
+      🆓 100% FREE → <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a><br>
+      Sign up with Google → "Create API Key" → Copy → Paste here<br>
+      🔒 Saved in your browser only
     </div>
   </div>
 
   <div class="card">
     <div class="card-title">🗑️ Storage</div>
-    <button class="btn-act" onclick="clearAll()" style="width:100%;justify-content:center;border-color:rgba(239,68,68,.3);color:var(--danger)">Clear All Saved Videos</button>
+    <button class="btn-act" onclick="clearAll()" style="width:100%;justify-content:center;border-color:rgba(239,68,68,.3);color:var(--danger)">🗑️ Clear All Saved Videos</button>
     <div style="font-size:.73rem;color:var(--muted);margin-top:8px">Videos auto-delete after 3 days</div>
   </div>
 
   <div class="card">
     <div class="card-title">ℹ️ How It Works</div>
-    <div style="font-size:.8rem;color:var(--muted);line-height:1.7">
-      <b style="color:var(--text)">Step 1:</b> Gemini Vision analyzes video frames to understand content<br>
-      <b style="color:var(--text)">Step 2:</b> Groq LLaMA writes voiceover script (super fast!)<br>
-      <b style="color:var(--text)">Step 3:</b> Browser TTS converts script to voice<br>
-      <b style="color:var(--text)">Step 4:</b> Web Audio generates copyright-free music<br>
-      <b style="color:var(--text)">Step 5:</b> Everything merged into final video<br><br>
-      <b style="color:var(--success)">Both APIs are 100% FREE ✅</b>
+    <div style="font-size:.8rem;color:var(--muted);line-height:1.8">
+      <b style="color:var(--text)">1.</b> You describe your video topic (optional)<br>
+      <b style="color:var(--text)">2.</b> Groq LLaMA writes the voiceover script instantly<br>
+      <b style="color:var(--text)">3.</b> Browser converts script to natural speech<br>
+      <b style="color:var(--text)">4.</b> Copyright-free music generated locally<br>
+      <b style="color:var(--text)">5.</b> Everything merged into final video<br><br>
+      <b style="color:var(--success)">✅ 100% Free • No Gemini needed • Mobile friendly</b>
     </div>
   </div>
 </div>
@@ -300,10 +288,10 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
 <div class="toast" id="toast"></div>
 
 <script>
-let selVideo=null,curMusic='chill',finalBlob=null,genScript='',videoDesc='';
+let selVideo=null,curMusic='chill',finalBlob=null,genScript='';
 const EXPIRE=3*24*60*60*1000;
 
-window.onload=()=>{loadKeys();cleanExpired();speechSynthesis.getVoices();};
+window.onload=()=>{loadKey();cleanExpired();speechSynthesis.getVoices();};
 speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();
 
 // ── TABS ──
@@ -315,21 +303,16 @@ function switchTab(n){
   if(n==='completed')renderCV();
 }
 
-// ── KEYS ──
-function saveKeys(){
-  const g=document.getElementById('geminiKey').value.trim();
-  const q=document.getElementById('groqKey').value.trim();
-  if(g){localStorage.setItem('vs_gemini',g);document.getElementById('gSaved').style.display='inline-block';}
-  if(q){localStorage.setItem('vs_groq',q);document.getElementById('gqSaved').style.display='inline-block';}
+// ── KEY ──
+function saveKey(){
+  const v=document.getElementById('groqKey').value.trim();
+  if(v){localStorage.setItem('vs_groq',v);document.getElementById('gqSaved').style.display='inline-block';}
 }
-function loadKeys(){
-  const g=localStorage.getItem('vs_gemini');
-  const q=localStorage.getItem('vs_groq');
-  if(g){document.getElementById('geminiKey').value=g;document.getElementById('gSaved').style.display='inline-block';}
-  if(q){document.getElementById('groqKey').value=q;document.getElementById('gqSaved').style.display='inline-block';}
+function loadKey(){
+  const k=localStorage.getItem('vs_groq');
+  if(k){document.getElementById('groqKey').value=k;document.getElementById('gqSaved').style.display='inline-block';}
 }
-function getGemini(){return localStorage.getItem('vs_gemini')||'';}
-function getGroq(){return localStorage.getItem('vs_groq')||'';}
+function getKey(){return localStorage.getItem('vs_groq')||'';}
 
 // ── UPLOAD ──
 const uz=document.getElementById('uploadZone');
@@ -346,7 +329,7 @@ function loadVid(f){
   const vi=document.getElementById('vinfo');
   vi.style.display='block';
   vi.textContent='✅ '+f.name+' ('+(f.size/1024/1024).toFixed(1)+' MB)';
-  setStep(2);toast('Video loaded!','ok');
+  setStep(2);toast('Video loaded! ✅','ok');
 }
 
 function selMus(b){
@@ -366,60 +349,50 @@ function setStep(n){
 // ── MAIN ──
 async function startGen(){
   if(!selVideo){toast('Upload video first!','err');return;}
-  const gKey=getGemini(),qKey=getGroq();
-  if(!gKey||!qKey){
-    toast('Add both API keys in Settings!','err');
-    switchTab('settings');return;
-  }
+  const key=getKey();
+  if(!key){toast('Add Groq API key in Settings!','err');switchTab('settings');return;}
 
   document.getElementById('genBtn').disabled=true;
   document.getElementById('progCard').style.display='block';
   document.getElementById('resCard').style.display='none';
-  setStep(3);setBar(0);
+  setStep(3);setBar(0);setLbl('Starting...');
 
   try{
-    // Step 1: Extract frames
-    pAct('ps1');setBar(5);
-    const frames=await extractFrames(selVideo,3);
-    pDone('ps1');setBar(15);
-
-    // Step 2: Gemini Vision - analyze frames
-    pAct('ps2');setBar(17);
-    videoDesc=await geminiAnalyze(frames,gKey);
-    pDone('ps2');setBar(35);
-
-    // Step 3: Groq - generate script
-    pAct('ps3');setBar(37);
+    // Step 1: Groq script (instant!)
+    pAct('ps1');setBar(5);setLbl('Writing script...');
     const lang=document.getElementById('langSel').value;
     const style=document.getElementById('styleSel').value;
-    genScript=await groqScript(videoDesc,lang,style,qKey);
-    pDone('ps3');setBar(55);
+    const topic=document.getElementById('topicInput').value.trim();
+    genScript=await groqScript(topic,selVideo.name,lang,style,key);
+    pDone('ps1');setBar(30);
 
-    // Step 4: Voice
-    pAct('ps4');setBar(57);
+    // Step 2: Voice
+    pAct('ps2');setBar(32);setLbl('Creating voice...');
     const vData=await synthVoice(genScript,lang);
-    pDone('ps4');setBar(72);
+    pDone('ps2');setBar(55);
 
-    // Step 5: Music
-    pAct('ps5');setBar(74);
-    const mData=curMusic!=='none'?await genMusic(curMusic,30):null;
-    pDone('ps5');setBar(87);
+    // Step 3: Music (15 sec only = faster!)
+    pAct('ps3');setBar(57);setLbl('Generating music...');
+    const mData=curMusic!=='none'?await genMusic(curMusic,15):null;
+    pDone('ps3');setBar(78);
 
-    // Step 6: Merge
-    pAct('ps6');setBar(89);
+    // Step 4: Merge
+    pAct('ps4');setBar(80);setLbl('Merging video...');
     finalBlob=await mergeAll(selVideo,vData,mData);
-    pDone('ps6');setBar(100);
+    pDone('ps4');setBar(100);setLbl('Done! 🎉');
 
     showResult();saveCV();setStep(4);
 
   }catch(err){
     console.error(err);
-    toast('Error: '+err.message,'err');
+    toast('❌ '+err.message,'err');
     document.getElementById('genBtn').disabled=false;
+    setLbl('');
   }
 }
 
 function setBar(p){document.getElementById('progBar').style.width=p+'%';}
+function setLbl(t){document.getElementById('progLabel').textContent=t;}
 function pAct(id){
   document.getElementById(id).classList.add('active');
   document.getElementById(id.replace('ps','s')+'i').innerHTML='<div class="spin"></div>';
@@ -430,75 +403,35 @@ function pDone(id){
   document.getElementById(id.replace('ps','s')+'i').textContent='✅';
 }
 
-// ── FRAME EXTRACTION ──
-function extractFrames(file,count){
-  return new Promise((res,rej)=>{
-    const v=document.createElement('video');
-    v.src=URL.createObjectURL(file);v.muted=true;
-    v.addEventListener('loadedmetadata',async()=>{
-      const dur=v.duration,frames=[];
-      const c=document.createElement('canvas');
-      c.width=480;c.height=270;
-      const ctx=c.getContext('2d');
-      for(let i=0;i<count;i++){
-        await seek(v,(dur/(count+1))*(i+1));
-        ctx.drawImage(v,0,0,c.width,c.height);
-        frames.push(c.toDataURL('image/jpeg',.5).split(',')[1]);
-      }
-      res(frames);
-    });
-    v.addEventListener('error',rej);v.load();
-  });
-}
-function seek(v,t){
-  return new Promise(r=>{
-    v.currentTime=t;
-    v.addEventListener('seeked',r,{once:true});
-  });
-}
-
-// ── GEMINI VISION (analyze only, no script) ──
-async function geminiAnalyze(frames,key){
-  const parts=[
-    {text:'Describe what is happening in these video frames in 2-3 sentences. Be specific about characters, actions, setting, and mood. This description will be used to write a voiceover script.'},
-    ...frames.map(f=>({inline_data:{mime_type:'image/jpeg',data:f}}))
-  ];
-  const r=await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`,
-    {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        contents:[{parts}],
-        generationConfig:{maxOutputTokens:150,temperature:0.4}
-      })
-    }
-  );
-  if(!r.ok){const e=await r.json();throw new Error('Gemini: '+(e.error?.message||'Failed. Check Gemini key in Settings'));}
-  const d=await r.json();
-  return d.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||'An interesting video scene.';
-}
-
-// ── GROQ SCRIPT (fast LLaMA) ──
-async function groqScript(desc,lang,style,key){
+// ── GROQ SCRIPT ──
+async function groqScript(topic,filename,lang,style,key){
   const isHindi=lang.startsWith('hi');
   const styles={
-    energetic:'exciting, high-energy, enthusiastic',
-    calm:'calm, soothing, peaceful',
-    dramatic:'dramatic, cinematic, intense',
-    friendly:'friendly, warm, conversational'
+    energetic:'exciting, high-energy, enthusiastic, dynamic',
+    calm:'calm, soothing, peaceful, relaxing',
+    dramatic:'dramatic, cinematic, intense, powerful',
+    friendly:'friendly, warm, fun, conversational'
   };
-  const prompt=`You are a voiceover scriptwriter. Based on this video description, write a ${styles[style]} voiceover narration in ${isHindi?'Hindi (Devanagari script)':'English'}.
 
-Video description: ${desc}
+  // Smart context from filename + topic
+  const context=topic
+    ?`Video topic: "${topic}"`
+    :`Video file: "${filename.replace(/\.[^.]+$/,'').replace(/[_-]/g,' ')}"`;
+
+  const prompt=`You are a professional voiceover scriptwriter for short videos.
+
+${context}
+
+Write a ${styles[style]} voiceover script in ${isHindi?'Hindi (Devanagari script only, no English words)':'English'}.
 
 Rules:
-- Maximum 60 words
-- Only the spoken narration text
-- No stage directions, labels, or explanations
-- Make it ${styles[style]} and engaging
+- Maximum 55 words
+- ONLY the spoken narration text
+- NO stage directions, NO labels, NO explanations
+- Make it ${styles[style]} and captivating
+- Sound natural when spoken aloud
 
-Write the voiceover now:`;
+Write the voiceover script:`;
 
   const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{
     method:'POST',
@@ -509,45 +442,64 @@ Write the voiceover now:`;
     body:JSON.stringify({
       model:'llama-3.1-8b-instant',
       messages:[{role:'user',content:prompt}],
-      max_tokens:200,
-      temperature:0.7
+      max_tokens:150,
+      temperature:0.75
     })
   });
-  if(!r.ok){const e=await r.json();throw new Error('Groq: '+(e.error?.message||'Failed. Check Groq key in Settings'));}
+
+  if(!r.ok){
+    const e=await r.json();
+    throw new Error('Groq: '+(e.error?.message||'Check your API key in Settings'));
+  }
   const d=await r.json();
-  return d.choices?.[0]?.message?.content?.trim()||'Amazing content unfolds before your eyes!';
+  return d.choices?.[0]?.message?.content?.trim()||'An incredible moment unfolds. Watch as the story comes alive before your eyes!';
 }
 
 // ── VOICE ──
 function synthVoice(text,lang){
   return new Promise((res,rej)=>{
+    // Check support
+    if(!window.speechSynthesis){rej(new Error('Speech not supported on this browser'));return;}
+
     const ac=new(window.AudioContext||window.webkitAudioContext)();
     const dest=ac.createMediaStreamDestination();
     const chunks=[];
     const rec=new MediaRecorder(dest.stream);
-    rec.ondataavailable=e=>chunks.push(e.data);
+    rec.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data);};
     rec.onstop=()=>res({blob:new Blob(chunks,{type:'audio/webm'})});
+
     const u=new SpeechSynthesisUtterance(text);
-    u.lang=lang;u.rate=0.92;u.pitch=1;u.volume=1;
+    u.lang=lang;u.rate=0.9;u.pitch=1;u.volume=1;
+
     const voices=speechSynthesis.getVoices();
-    const m=voices.find(v=>v.lang.startsWith(lang.split('-')[0]));
-    if(m)u.voice=m;
+    const match=voices.find(v=>v.lang.startsWith(lang.split('-')[0]));
+    if(match)u.voice=match;
+
     rec.start();
-    u.onend=()=>rec.stop();
-    u.onerror=e=>{rec.stop();rej(new Error('Voice synthesis failed'));};
-    speechSynthesis.speak(u);
+    u.onend=()=>{setTimeout(()=>rec.stop(),300);};
+    u.onerror=()=>{rec.stop();rej(new Error('Voice synthesis failed. Try Chrome browser.'));};
+
+    // Timeout fallback
+    const timeout=setTimeout(()=>{
+      speechSynthesis.cancel();rec.stop();
+      rej(new Error('Voice timeout. Try shorter text or Chrome browser.'));
+    },30000);
+    u.onend=()=>{clearTimeout(timeout);setTimeout(()=>rec.stop(),300);};
+
+    speechSynthesis.cancel();
+    setTimeout(()=>speechSynthesis.speak(u),100);
   });
 }
 
-// ── MUSIC ──
-function genMusic(style,dur=30){
+// ── MUSIC (15 sec for speed) ──
+function genMusic(style,dur=15){
   return new Promise(res=>{
     const ac=new(window.AudioContext||window.webkitAudioContext)();
     const dest=ac.createMediaStreamDestination();
     const cfgs={
-      chill:{bpm:75,notes:[261.6,293.7,329.6,392,440],wave:'sine',g:.07},
+      chill:{bpm:75,notes:[261.6,293.7,329.6,392,440],wave:'sine',g:.08},
       epic:{bpm:120,notes:[196,220,246.9,293.7,329.6],wave:'sawtooth',g:.05},
-      happy:{bpm:100,notes:[329.6,392,440,523.3,587.3],wave:'triangle',g:.06},
+      happy:{bpm:100,notes:[329.6,392,440,523.3,587.3],wave:'triangle',g:.07},
       dramatic:{bpm:60,notes:[164.8,196,220,246.9,293.7],wave:'sawtooth',g:.05},
       gaming:{bpm:140,notes:[220,261.6,329.6,392,493.9],wave:'square',g:.04}
     };
@@ -555,6 +507,7 @@ function genMusic(style,dur=30){
     const mg=ac.createGain();mg.gain.value=cfg.g;
     const comp=ac.createDynamicsCompressor();
     mg.connect(comp);comp.connect(dest);
+
     let t=ac.currentTime+.1;
     while(t<ac.currentTime+dur){
       const note=cfg.notes[Math.floor(Math.random()*cfg.notes.length)];
@@ -562,16 +515,17 @@ function genMusic(style,dur=30){
       o.type=cfg.wave;o.frequency.value=note;
       o.connect(g);g.connect(mg);
       g.gain.setValueAtTime(0,t);
-      g.gain.linearRampToValueAtTime(1,t+.04);
+      g.gain.linearRampToValueAtTime(1,t+.05);
       g.gain.exponentialRampToValueAtTime(.001,t+bl*.8);
       o.start(t);o.stop(t+bl);
       t+=bl*(Math.random()>.7?.5:1);
     }
+
     const chunks=[],rec=new MediaRecorder(dest.stream);
-    rec.ondataavailable=e=>chunks.push(e.data);
+    rec.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data);};
     rec.onstop=()=>res(new Blob(chunks,{type:'audio/webm'}));
     rec.start();
-    setTimeout(()=>rec.stop(),(dur+1)*1000);
+    setTimeout(()=>{rec.stop();ac.close();},(dur+1)*1000);
   });
 }
 
@@ -580,51 +534,71 @@ async function mergeAll(vFile,vData,mBlob){
   const ac=new(window.AudioContext||window.webkitAudioContext)();
   const dest=ac.createMediaStreamDestination();
 
-  // Voice
-  const vBuf=await ac.decodeAudioData(await vData.blob.arrayBuffer());
-  const vSrc=ac.createBufferSource();vSrc.buffer=vBuf;
-  const vG=ac.createGain();vG.gain.value=1;
-  vSrc.connect(vG);vG.connect(dest);
+  // Voice audio
+  try{
+    const vBuf=await ac.decodeAudioData(await vData.blob.arrayBuffer());
+    const vSrc=ac.createBufferSource();vSrc.buffer=vBuf;
+    const vG=ac.createGain();vG.gain.value=1;
+    vSrc.connect(vG);vG.connect(dest);
+    vSrc.start();
+  }catch(e){console.warn('Voice audio skip',e);}
 
-  // Music
+  // Music audio
   let mSrc=null;
   if(mBlob){
     try{
       const mBuf=await ac.decodeAudioData(await mBlob.arrayBuffer());
       mSrc=ac.createBufferSource();mSrc.buffer=mBuf;
-      const mG=ac.createGain();mG.gain.value=.22;
+      mSrc.loop=true;
+      const mG=ac.createGain();mG.gain.value=.2;
       mSrc.connect(mG);mG.connect(dest);
+      mSrc.start();
     }catch(e){console.warn('Music skip',e);}
   }
 
+  // Video canvas
   const vid=document.createElement('video');
-  vid.src=URL.createObjectURL(vFile);vid.muted=true;
+  vid.src=URL.createObjectURL(vFile);
+  vid.muted=true;
+  vid.playsInline=true;
+  await new Promise(r=>{vid.oncanplay=r;vid.load();});
   await vid.play();
 
   const c=document.createElement('canvas');
   c.width=1280;c.height=720;
   const ctx=c.getContext('2d');
+
+  const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm']
+    .find(t=>MediaRecorder.isTypeSupported(t))||'video/webm';
+
   const stream=new MediaStream([
     ...c.captureStream(30).getVideoTracks(),
     ...dest.stream.getAudioTracks()
   ]);
-  const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm']
-    .find(t=>MediaRecorder.isTypeSupported(t))||'video/webm';
+
   const rec=new MediaRecorder(stream,{mimeType:mime});
   const chunks=[];
   rec.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data);};
 
   return new Promise(res=>{
-    rec.onstop=()=>res(new Blob(chunks,{type:'video/webm'}));
+    rec.onstop=()=>{
+      if(mSrc)try{mSrc.stop();}catch(e){}
+      ac.close();
+      res(new Blob(chunks,{type:'video/webm'}));
+    };
+
     function draw(){
       if(!vid.paused&&!vid.ended){
         ctx.drawImage(vid,0,0,c.width,c.height);
         requestAnimationFrame(draw);
       }
     }
-    rec.start(100);vSrc.start();if(mSrc)mSrc.start();draw();
-    vid.onended=()=>setTimeout(()=>{rec.stop();ac.close();},400);
-    setTimeout(()=>{if(rec.state==='recording'){rec.stop();ac.close();}},120000);
+
+    rec.start(200);
+    draw();
+
+    vid.onended=()=>setTimeout(()=>{if(rec.state==='recording')rec.stop();},500);
+    setTimeout(()=>{if(rec.state==='recording')rec.stop();},120000);
   });
 }
 
@@ -652,20 +626,22 @@ function playVoice(){
   if(!genScript)return;
   const u=new SpeechSynthesisUtterance(genScript);
   u.lang=document.getElementById('langSel').value;
-  speechSynthesis.cancel();speechSynthesis.speak(u);
-  toast('Playing...','ok');
+  speechSynthesis.cancel();
+  setTimeout(()=>speechSynthesis.speak(u),100);
+  toast('🔊 Playing...','ok');
 }
 function resetApp(){
-  selVideo=null;finalBlob=null;genScript='';videoDesc='';
+  selVideo=null;finalBlob=null;genScript='';
   document.getElementById('videoInput').value='';
   document.getElementById('vPreview').style.display='none';
   document.getElementById('vinfo').style.display='none';
   document.getElementById('progCard').style.display='none';
   document.getElementById('resCard').style.display='none';
   document.getElementById('genBtn').disabled=false;
+  document.getElementById('topicInput').value='';
   document.querySelectorAll('.ps').forEach(s=>s.classList.remove('active','done'));
-  for(let i=1;i<=6;i++){const e=document.getElementById('s'+i+'i');if(e)e.innerHTML='';}
-  setBar(0);setStep(1);
+  for(let i=1;i<=4;i++){const e=document.getElementById('s'+i+'i');if(e)e.innerHTML='';}
+  setBar(0);setLbl('');setStep(1);
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -674,28 +650,31 @@ function saveCV(){
   if(!finalBlob)return;
   const reader=new FileReader();
   reader.onload=()=>{
-    const vids=getCVs();
-    vids.push({
-      id:'v'+Date.now(),
-      name:selVideo?.name||'video.webm',
-      script:genScript,
-      lang:document.getElementById('langSel').value,
-      style:document.getElementById('styleSel').value,
-      music:curMusic,
-      created:Date.now(),
-      expires:Date.now()+EXPIRE,
-      data:reader.result
-    });
-    while(vids.length>10)vids.shift();
-    try{localStorage.setItem('vs_vids',JSON.stringify(vids));}
-    catch(e){toast('Storage full, video not saved','err');}
+    try{
+      const vids=getCVs();
+      vids.push({
+        id:'v'+Date.now(),
+        name:selVideo?.name||'video',
+        script:genScript,
+        lang:document.getElementById('langSel').value,
+        style:document.getElementById('styleSel').value,
+        music:curMusic,
+        created:Date.now(),
+        expires:Date.now()+EXPIRE,
+        data:reader.result
+      });
+      while(vids.length>8)vids.shift();
+      localStorage.setItem('vs_vids',JSON.stringify(vids));
+    }catch(e){console.warn('Save failed',e);}
   };
   reader.readAsDataURL(finalBlob);
 }
 function getCVs(){try{return JSON.parse(localStorage.getItem('vs_vids')||'[]');}catch{return[];}}
 function cleanExpired(){
-  const v=getCVs().filter(x=>x.expires>Date.now());
-  localStorage.setItem('vs_vids',JSON.stringify(v));
+  try{
+    const v=getCVs().filter(x=>x.expires>Date.now());
+    localStorage.setItem('vs_vids',JSON.stringify(v));
+  }catch(e){}
 }
 function renderCV(){
   cleanExpired();
@@ -710,15 +689,15 @@ function renderCV(){
   [...vids].reverse().forEach(v=>{
     const d=Math.ceil((v.expires-Date.now())/(24*60*60*1000));
     const div=document.createElement('div');div.className='cv-item';
-    div.innerHTML=`<video class="cv-thumb" src="${v.data}" muted></video>
+    div.innerHTML=`<video class="cv-thumb" src="${v.data}" muted playsinline></video>
     <div class="cv-info">
       <div class="cv-name">${v.name}</div>
       <div class="cv-meta">${new Date(v.created).toLocaleDateString()} • ${v.lang.startsWith('hi')?'Hindi':'English'} • ${v.style}</div>
       <div class="cv-exp">⏳ ${d} day${d!==1?'s':''} left</div>
       <div class="cv-btns">
-        <button class="cv-btn" onclick="dlCV('${v.id}')">⬇️ Download</button>
-        <button class="cv-btn" onclick="playCV('${v.id}')">🔊 Voice</button>
-        <button class="cv-btn del" onclick="delCV('${v.id}')">🗑️ Delete</button>
+        <button class="cv-btn" onclick="dlCV('${v.id}')">⬇️</button>
+        <button class="cv-btn" onclick="playCV('${v.id}')">🔊</button>
+        <button class="cv-btn del" onclick="delCV('${v.id}')">🗑️</button>
       </div>
     </div>`;
     list.appendChild(div);
@@ -727,12 +706,11 @@ function renderCV(){
 function dlCV(id){
   const v=getCVs().find(x=>x.id===id);if(!v)return;
   const a=document.createElement('a');a.href=v.data;a.download='vo_'+id+'.webm';a.click();
-  toast('Downloading...','ok');
 }
 function playCV(id){
   const v=getCVs().find(x=>x.id===id);if(!v||!v.script)return;
   const u=new SpeechSynthesisUtterance(v.script);u.lang=v.lang;
-  speechSynthesis.cancel();speechSynthesis.speak(u);toast('Playing...','ok');
+  speechSynthesis.cancel();setTimeout(()=>speechSynthesis.speak(u),100);
 }
 function delCV(id){
   localStorage.setItem('vs_vids',JSON.stringify(getCVs().filter(x=>x.id!==id)));
