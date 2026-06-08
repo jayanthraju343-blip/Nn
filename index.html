@@ -17,103 +17,111 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:20px 14px 60px}
 
 .tabs{display:flex;gap:6px;margin-bottom:22px;background:var(--surface);padding:6px;border-radius:14px;border:1px solid var(--border)}
-.tab{flex:1;padding:10px 6px;border:none;border-radius:10px;background:transparent;color:var(--muted);font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s;text-align:center}
+.tab{flex:1;padding:10px 6px;border:none;border-radius:10px;background:transparent;color:var(--muted);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;text-align:center}
 .tab.active{background:var(--card);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .page{display:none}.page.active{display:block}
 
-header{text-align:center;margin-bottom:24px;padding-top:8px}
+header{text-align:center;margin-bottom:20px;padding-top:8px}
 .logo-row{display:inline-flex;align-items:center;gap:10px;margin-bottom:8px}
 .logo-ico{width:40px;height:40px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}
 .logo-txt{font-size:1.5rem;font-weight:800;letter-spacing:-.5px}
 .logo-txt span{color:var(--accent)}
-header p{color:var(--muted);font-size:.88rem}
+header p{color:var(--muted);font-size:.85rem}
+.badges{display:flex;justify-content:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;padding:3px 10px;border-radius:99px;font-weight:600}
+.badge.green{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);color:var(--success)}
+.badge.purple{background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.25);color:#c4b5fd}
+.badge.orange{background:rgba(255,107,53,.12);border:1px solid rgba(255,107,53,.25);color:var(--accent)}
 
-/* FREE BADGE */
-.free-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);color:var(--success);font-size:.75rem;padding:3px 10px;border-radius:99px;margin-top:6px;font-weight:600}
-
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px}
 .card-title{font-size:.95rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 
-.upload-zone{border:2px dashed var(--border);border-radius:12px;padding:30px 16px;text-align:center;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.02);position:relative}
+.upload-zone{border:2px dashed var(--border);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.02);position:relative}
 .upload-zone:hover,.upload-zone.over{border-color:var(--accent);background:rgba(255,107,53,.05)}
 .upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
-.u-icon{font-size:2.2rem;margin-bottom:8px}
-.upload-zone h3{font-size:.95rem;margin-bottom:4px}
-.upload-zone p{color:var(--muted);font-size:.82rem}
+.u-icon{font-size:2rem;margin-bottom:8px}
+.upload-zone h3{font-size:.92rem;margin-bottom:4px}
+.upload-zone p{color:var(--muted);font-size:.8rem}
 #vPreview{display:none;width:100%;border-radius:10px;max-height:200px;object-fit:contain;background:#000;margin-top:10px}
 .vinfo{display:none;margin-top:10px;padding:9px 12px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:8px;font-size:.82rem;color:var(--success)}
 
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.fg label{display:block;font-size:.75rem;color:var(--muted);margin-bottom:5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.fg{margin-bottom:10px}
+.fg label{display:block;font-size:.72rem;color:var(--muted);margin-bottom:5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
 select,input[type=text],input[type=password]{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:10px 12px;font-size:.88rem;outline:none;transition:border-color .2s;-webkit-appearance:none}
 select:focus,input:focus{border-color:var(--accent)}
-.api-note{font-size:.75rem;color:var(--muted);margin-top:5px;line-height:1.5}
+.api-note{font-size:.73rem;color:var(--muted);margin-top:5px;line-height:1.5}
 .api-note a{color:var(--accent);text-decoration:none}
-.saved-badge{display:inline-block;background:rgba(16,185,129,.15);color:var(--success);font-size:.7rem;padding:2px 7px;border-radius:4px;margin-left:6px}
+.saved-ok{display:inline-block;background:rgba(16,185,129,.15);color:var(--success);font-size:.68rem;padding:2px 7px;border-radius:4px;margin-left:6px;display:none}
 
 .music-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.mb{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:9px 6px;text-align:center;cursor:pointer;transition:all .2s;color:var(--text);font-size:.8rem}
+.mb{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:9px 6px;text-align:center;cursor:pointer;transition:all .2s;color:var(--text);font-size:.78rem;width:100%}
 .mb:hover{border-color:var(--accent2)}
 .mb.sel{border-color:var(--accent2);background:rgba(124,58,237,.15);color:#c4b5fd}
-.mb .e{font-size:1.2rem;display:block;margin-bottom:3px}
+.mb .e{font-size:1.1rem;display:block;margin-bottom:3px}
 
-.btn-gen{width:100%;padding:15px;background:linear-gradient(135deg,var(--accent),#e55a2b);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-gen{width:100%;padding:15px;background:linear-gradient(135deg,var(--accent),#e55a2b);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px}
 .btn-gen:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,107,53,.35)}
 .btn-gen:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
 
 .prog-card{display:none}
-.prog-bar-wrap{background:var(--surface);border-radius:99px;height:6px;margin-bottom:16px;overflow:hidden}
-.prog-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;width:0%;transition:width .4s}
-.psteps{display:flex;flex-direction:column;gap:8px}
-.ps{display:flex;align-items:center;gap:10px;padding:11px 12px;background:var(--surface);border-radius:10px;font-size:.85rem;border:1px solid var(--border);transition:all .3s}
+.prog-bar-wrap{background:var(--surface);border-radius:99px;height:5px;margin-bottom:14px;overflow:hidden}
+.prog-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;width:0%;transition:width .5s}
+.psteps{display:flex;flex-direction:column;gap:7px}
+.ps{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface);border-radius:10px;font-size:.83rem;border:1px solid var(--border);transition:all .3s}
 .ps.active{border-color:var(--accent);background:rgba(255,107,53,.06)}
 .ps.done{border-color:var(--success);background:rgba(16,185,129,.06)}
-.ps .pi{font-size:1.1rem;width:26px;text-align:center}
+.ps .pi{font-size:1rem;width:24px;text-align:center}
 .ps .pt{flex:1}
-.ps .pl{font-weight:600}
-.ps .ps2{font-size:.75rem;color:var(--muted);margin-top:2px}
-.spin{width:16px;height:16px;border:2px solid rgba(255,107,53,.3);border-top-color:var(--accent);border-radius:50%;animation:sp .7s linear infinite}
+.ps .pl{font-weight:600;font-size:.83rem}
+.ps .ps2{font-size:.72rem;color:var(--muted);margin-top:1px}
+.spin{width:15px;height:15px;border:2px solid rgba(255,107,53,.3);border-top-color:var(--accent);border-radius:50%;animation:sp .7s linear infinite;flex-shrink:0}
 @keyframes sp{to{transform:rotate(360deg)}}
 
 .res-card{display:none}
-.res-video{width:100%;border-radius:10px;background:#000;max-height:260px}
+.res-video{width:100%;border-radius:10px;background:#000;max-height:250px}
 .res-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.btn-act{padding:11px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;font-weight:500}
+.btn-act{padding:11px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.83rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;font-weight:500}
 .btn-act:hover{border-color:var(--accent);color:var(--accent)}
 .btn-act.pri{background:linear-gradient(135deg,var(--accent2),#5b21b6);border-color:transparent;color:#fff}
 .btn-act.pri:hover{box-shadow:0 6px 20px rgba(124,58,237,.35);color:#fff}
-.script-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:.82rem;line-height:1.7;color:#d0d0e0;margin-top:12px;max-height:180px;overflow-y:auto;white-space:pre-wrap;display:none}
+.script-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:.82rem;line-height:1.7;color:#d0d0e0;margin-top:12px;max-height:160px;overflow-y:auto;white-space:pre-wrap;display:none}
 
-.cv-empty{text-align:center;padding:32px 16px;color:var(--muted)}
-.cv-empty .e{font-size:2.5rem;margin-bottom:8px}
-.cv-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
-.cv-thumb{width:72px;height:54px;border-radius:8px;background:#000;object-fit:cover;flex-shrink:0}
-.cv-info{flex:1;min-width:0}
-.cv-name{font-size:.88rem;font-weight:600;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cv-meta{font-size:.75rem;color:var(--muted);margin-bottom:4px}
-.cv-exp{font-size:.72rem;color:var(--danger);margin-bottom:6px}
-.cv-btns{display:flex;gap:6px;flex-wrap:wrap}
-.cv-btn{padding:5px 10px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.75rem;cursor:pointer;transition:all .2s}
-.cv-btn:hover{border-color:var(--accent);color:var(--accent)}
-.cv-btn.del{color:var(--danger);border-color:rgba(239,68,68,.3)}
-.cv-btn.del:hover{background:rgba(239,68,68,.1)}
-
-/* steps indicator */
-.steps-row{display:flex;justify-content:center;gap:6px;margin-bottom:20px;flex-wrap:wrap}
-.stp{display:flex;align-items:center;gap:5px;font-size:.78rem;color:var(--muted);font-weight:500}
-.stp.active{color:var(--accent)}
-.stp.done{color:var(--success)}
-.stp-n{width:20px;height:20px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700}
+/* steps */
+.steps-row{display:flex;justify-content:center;gap:5px;margin-bottom:18px;flex-wrap:wrap}
+.stp{display:flex;align-items:center;gap:4px;font-size:.75rem;color:var(--muted);font-weight:500}
+.stp.active{color:var(--accent)}.stp.done{color:var(--success)}
+.stp-n{width:19px;height:19px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700}
 .stp.active .stp-n{background:var(--accent);color:#fff}
 .stp.done .stp-n{background:var(--success);color:#fff}
-.stp-div{color:var(--border);font-size:.8rem}
+.stp-div{color:var(--border);font-size:.75rem}
 
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px 18px;font-size:.85rem;z-index:999;transition:transform .3s;white-space:nowrap}
+/* completed */
+.cv-empty{text-align:center;padding:28px 16px;color:var(--muted)}
+.cv-empty .e{font-size:2.2rem;margin-bottom:8px}
+.cv-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:10px;display:flex;gap:10px;align-items:flex-start}
+.cv-thumb{width:68px;height:50px;border-radius:8px;background:#000;object-fit:cover;flex-shrink:0}
+.cv-info{flex:1;min-width:0}
+.cv-name{font-size:.85rem;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cv-meta{font-size:.72rem;color:var(--muted);margin-bottom:3px}
+.cv-exp{font-size:.7rem;color:var(--danger);margin-bottom:5px}
+.cv-btns{display:flex;gap:5px;flex-wrap:wrap}
+.cv-btn{padding:4px 9px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.72rem;cursor:pointer;transition:all .2s}
+.cv-btn:hover{border-color:var(--accent);color:var(--accent)}
+.cv-btn.del{color:var(--danger);border-color:rgba(239,68,68,.3)}
+
+/* settings api row */
+.api-row{display:flex;align-items:center;gap:6px;margin-bottom:5px}
+.api-tag{font-size:.68rem;padding:2px 7px;border-radius:4px;font-weight:600}
+.api-tag.g{background:rgba(16,185,129,.15);color:var(--success)}
+.api-tag.p{background:rgba(124,58,237,.15);color:#c4b5fd}
+
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 18px;font-size:.83rem;z-index:999;transition:transform .3s;white-space:nowrap;max-width:90vw;text-align:center}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .toast.err{border-color:var(--danger);color:#fca5a5}
 .toast.ok{border-color:var(--success);color:#6ee7b7}
 
-footer{text-align:center;padding:16px 0 32px;color:var(--muted);font-size:.8rem;position:relative;z-index:1}
+footer{text-align:center;padding:16px 0 28px;color:var(--muted);font-size:.78rem;position:relative;z-index:1}
 footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
 
 ::-webkit-scrollbar{width:4px}
@@ -131,7 +139,11 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
     <div class="logo-txt">VoiceOver<span>Studio</span></div>
   </div>
   <p>Upload video → AI script → Voice + Music automatically</p>
-  <div class="free-badge">✨ 100% FREE — Powered by Gemini AI</div>
+  <div class="badges">
+    <div class="badge green">✨ 100% FREE</div>
+    <div class="badge purple">🖼️ Gemini Vision</div>
+    <div class="badge orange">⚡ Groq Script</div>
+  </div>
 </header>
 
 <div class="tabs">
@@ -140,9 +152,8 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
   <button class="tab" onclick="switchTab('settings')">⚙️ Settings</button>
 </div>
 
-<!-- ═══ CREATE PAGE ═══ -->
+<!-- CREATE -->
 <div class="page active" id="page-create">
-
   <div class="steps-row">
     <div class="stp active" id="st1"><div class="stp-n">1</div>Upload</div>
     <div class="stp-div">›</div>
@@ -150,7 +161,7 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
     <div class="stp-div">›</div>
     <div class="stp" id="st3"><div class="stp-n">3</div>Generate</div>
     <div class="stp-div">›</div>
-    <div class="stp" id="st4"><div class="stp-n">4</div>Download</div>
+    <div class="stp" id="st4"><div class="stp-n">4</div>Done</div>
   </div>
 
   <div class="card">
@@ -205,16 +216,17 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
     <div class="card-title">⏳ Processing...</div>
     <div class="prog-bar-wrap"><div class="prog-bar" id="progBar"></div></div>
     <div class="psteps">
-      <div class="ps" id="ps1"><div class="pi">🎞️</div><div class="pt"><div class="pl">Analyzing Frames</div><div class="ps2">Extracting key moments</div></div><div id="s1i"></div></div>
-      <div class="ps" id="ps2"><div class="pi">🤖</div><div class="pt"><div class="pl">AI Script (Gemini Free)</div><div class="ps2">Generating narration — 100% free</div></div><div id="s2i"></div></div>
-      <div class="ps" id="ps3"><div class="pi">🎙️</div><div class="pt"><div class="pl">Creating Voice</div><div class="ps2">Text-to-speech</div></div><div id="s3i"></div></div>
-      <div class="ps" id="ps4"><div class="pi">🎵</div><div class="pt"><div class="pl">Background Music</div><div class="ps2">Copyright-free generation</div></div><div id="s4i"></div></div>
-      <div class="ps" id="ps5"><div class="pi">🎬</div><div class="pt"><div class="pl">Merging</div><div class="ps2">Video + Voice + Music</div></div><div id="s5i"></div></div>
+      <div class="ps" id="ps1"><div class="pi">🎞️</div><div class="pt"><div class="pl">Extracting Frames</div><div class="ps2">Pulling key moments from video</div></div><div id="s1i"></div></div>
+      <div class="ps" id="ps2"><div class="pi">🖼️</div><div class="pt"><div class="pl">Gemini Vision Analysis</div><div class="ps2">Understanding video content</div></div><div id="s2i"></div></div>
+      <div class="ps" id="ps3"><div class="pi">⚡</div><div class="pt"><div class="pl">Groq Script Generation</div><div class="ps2">Writing voiceover narration (fast!)</div></div><div id="s3i"></div></div>
+      <div class="ps" id="ps4"><div class="pi">🎙️</div><div class="pt"><div class="pl">Voice Synthesis</div><div class="ps2">Text-to-speech conversion</div></div><div id="s4i"></div></div>
+      <div class="ps" id="ps5"><div class="pi">🎵</div><div class="pt"><div class="pl">Music Generation</div><div class="ps2">Creating copyright-free music</div></div><div id="s5i"></div></div>
+      <div class="ps" id="ps6"><div class="pi">🎬</div><div class="pt"><div class="pl">Final Merge</div><div class="ps2">Video + Voice + Music combined</div></div><div id="s6i"></div></div>
     </div>
   </div>
 
   <div class="card res-card" id="resCard">
-    <div class="card-title">🎉 Ready!</div>
+    <div class="card-title">🎉 Your Video is Ready!</div>
     <video class="res-video" id="resVideo" controls></video>
     <div class="script-box" id="scriptBox"></div>
     <div class="res-acts">
@@ -224,10 +236,9 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
       <button class="btn-act" onclick="playVoice()">🔊 Voice Only</button>
     </div>
   </div>
-
 </div>
 
-<!-- ═══ COMPLETED PAGE ═══ -->
+<!-- COMPLETED -->
 <div class="page" id="page-completed">
   <div class="card">
     <div class="card-title">✅ Completed Videos <span id="cvBadge" style="font-size:.75rem;color:var(--muted);font-weight:400"></span></div>
@@ -235,30 +246,51 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
   </div>
 </div>
 
-<!-- ═══ SETTINGS PAGE ═══ -->
+<!-- SETTINGS -->
 <div class="page" id="page-settings">
   <div class="card">
-    <div class="card-title">🔑 Gemini API Key <span class="free-badge" style="font-size:.7rem">FREE</span> <span id="savedBadge" class="saved-badge" style="display:none">✅ Saved</span></div>
+    <div class="card-title">🔑 API Keys (Both FREE)</div>
+
+    <div class="api-row">
+      <span class="api-tag g">Gemini</span>
+      <span style="font-size:.8rem;font-weight:600">Google Gemini Vision</span>
+      <span class="saved-ok" id="gSaved">✅ Saved</span>
+    </div>
     <div class="fg">
-      <label>Gemini API Key</label>
-      <input type="password" id="apiKeyInput" placeholder="AIza..." oninput="saveKey()"/>
+      <input type="password" id="geminiKey" placeholder="AIza..." oninput="saveKeys()"/>
+    </div>
+    <div class="api-note" style="margin-bottom:14px">
+      🆓 Get FREE: <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a> → Sign in → "Get API Key"
+    </div>
+
+    <div class="api-row">
+      <span class="api-tag p">Groq</span>
+      <span style="font-size:.8rem;font-weight:600">Groq LLaMA Script</span>
+      <span class="saved-ok" id="gqSaved">✅ Saved</span>
+    </div>
+    <div class="fg">
+      <input type="password" id="groqKey" placeholder="gsk_..." oninput="saveKeys()"/>
     </div>
     <div class="api-note">
-      🆓 Get FREE key at <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a><br>
-      Sign in with Google → "Get API Key" → Copy → Paste here<br>
-      Key saved in your browser only 🔒
+      🆓 Get FREE: <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a> → Sign up → "Create API Key"
     </div>
   </div>
+
   <div class="card">
     <div class="card-title">🗑️ Storage</div>
     <button class="btn-act" onclick="clearAll()" style="width:100%;justify-content:center;border-color:rgba(239,68,68,.3);color:var(--danger)">Clear All Saved Videos</button>
-    <div style="font-size:.75rem;color:var(--muted);margin-top:8px">Videos auto-delete after 3 days</div>
+    <div style="font-size:.73rem;color:var(--muted);margin-top:8px">Videos auto-delete after 3 days</div>
   </div>
+
   <div class="card">
-    <div class="card-title">ℹ️ About</div>
-    <div style="font-size:.82rem;color:var(--muted);line-height:1.6">
-      VoiceOver Studio uses <strong style="color:var(--text)">Google Gemini AI (Free)</strong> to analyze your video and write voiceover scripts. Voice is generated using browser's built-in Text-to-Speech. Background music is generated locally — 100% copyright-free.<br><br>
-      <strong style="color:var(--text)">No cost. No subscription. Just your free Gemini API key.</strong>
+    <div class="card-title">ℹ️ How It Works</div>
+    <div style="font-size:.8rem;color:var(--muted);line-height:1.7">
+      <b style="color:var(--text)">Step 1:</b> Gemini Vision analyzes video frames to understand content<br>
+      <b style="color:var(--text)">Step 2:</b> Groq LLaMA writes voiceover script (super fast!)<br>
+      <b style="color:var(--text)">Step 3:</b> Browser TTS converts script to voice<br>
+      <b style="color:var(--text)">Step 4:</b> Web Audio generates copyright-free music<br>
+      <b style="color:var(--text)">Step 5:</b> Everything merged into final video<br><br>
+      <b style="color:var(--success)">Both APIs are 100% FREE ✅</b>
     </div>
   </div>
 </div>
@@ -268,10 +300,10 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
 <div class="toast" id="toast"></div>
 
 <script>
-let selVideo=null, curMusic='chill', finalBlob=null, genScript='';
+let selVideo=null,curMusic='chill',finalBlob=null,genScript='',videoDesc='';
 const EXPIRE=3*24*60*60*1000;
 
-window.onload=()=>{ loadKey(); cleanExpired(); speechSynthesis.getVoices(); };
+window.onload=()=>{loadKeys();cleanExpired();speechSynthesis.getVoices();};
 speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();
 
 // ── TABS ──
@@ -280,19 +312,24 @@ function switchTab(n){
     document.querySelectorAll('.tab')[i].classList.toggle('active',t===n);
     document.getElementById('page-'+t).classList.toggle('active',t===n);
   });
-  if(n==='completed') renderCV();
+  if(n==='completed')renderCV();
 }
 
-// ── API KEY ──
-function saveKey(){
-  const v=document.getElementById('apiKeyInput').value.trim();
-  if(v){localStorage.setItem('vs_gemini',v);document.getElementById('savedBadge').style.display='inline-block';}
+// ── KEYS ──
+function saveKeys(){
+  const g=document.getElementById('geminiKey').value.trim();
+  const q=document.getElementById('groqKey').value.trim();
+  if(g){localStorage.setItem('vs_gemini',g);document.getElementById('gSaved').style.display='inline-block';}
+  if(q){localStorage.setItem('vs_groq',q);document.getElementById('gqSaved').style.display='inline-block';}
 }
-function loadKey(){
-  const k=localStorage.getItem('vs_gemini');
-  if(k){document.getElementById('apiKeyInput').value=k;document.getElementById('savedBadge').style.display='inline-block';}
+function loadKeys(){
+  const g=localStorage.getItem('vs_gemini');
+  const q=localStorage.getItem('vs_groq');
+  if(g){document.getElementById('geminiKey').value=g;document.getElementById('gSaved').style.display='inline-block';}
+  if(q){document.getElementById('groqKey').value=q;document.getElementById('gqSaved').style.display='inline-block';}
 }
-function getKey(){ return localStorage.getItem('vs_gemini')||''; }
+function getGemini(){return localStorage.getItem('vs_gemini')||'';}
+function getGroq(){return localStorage.getItem('vs_groq')||'';}
 
 // ── UPLOAD ──
 const uz=document.getElementById('uploadZone');
@@ -307,13 +344,14 @@ function loadVid(f){
   const p=document.getElementById('vPreview');
   p.src=URL.createObjectURL(f);p.style.display='block';
   const vi=document.getElementById('vinfo');
-  vi.style.display='block';vi.textContent='✅ '+f.name+' ('+(f.size/1024/1024).toFixed(1)+' MB)';
+  vi.style.display='block';
+  vi.textContent='✅ '+f.name+' ('+(f.size/1024/1024).toFixed(1)+' MB)';
   setStep(2);toast('Video loaded!','ok');
 }
 
 function selMus(b){
   document.querySelectorAll('.mb').forEach(x=>x.classList.remove('sel'));
-  b.classList.add('sel'); curMusic=b.dataset.m;
+  b.classList.add('sel');curMusic=b.dataset.m;
 }
 
 function setStep(n){
@@ -328,40 +366,52 @@ function setStep(n){
 // ── MAIN ──
 async function startGen(){
   if(!selVideo){toast('Upload video first!','err');return;}
-  const key=getKey();
-  if(!key){toast('Add Gemini API key in Settings!','err');switchTab('settings');return;}
+  const gKey=getGemini(),qKey=getGroq();
+  if(!gKey||!qKey){
+    toast('Add both API keys in Settings!','err');
+    switchTab('settings');return;
+  }
 
   document.getElementById('genBtn').disabled=true;
   document.getElementById('progCard').style.display='block';
   document.getElementById('resCard').style.display='none';
-  setStep(3); setBar(0);
+  setStep(3);setBar(0);
 
   try{
+    // Step 1: Extract frames
     pAct('ps1');setBar(5);
     const frames=await extractFrames(selVideo,3);
-    pDone('ps1');setBar(20);
+    pDone('ps1');setBar(15);
 
-    pAct('ps2');setBar(22);
+    // Step 2: Gemini Vision - analyze frames
+    pAct('ps2');setBar(17);
+    videoDesc=await geminiAnalyze(frames,gKey);
+    pDone('ps2');setBar(35);
+
+    // Step 3: Groq - generate script
+    pAct('ps3');setBar(37);
     const lang=document.getElementById('langSel').value;
     const style=document.getElementById('styleSel').value;
-    genScript=await geminiScript(frames,lang,style,key);
-    pDone('ps2');setBar(50);
+    genScript=await groqScript(videoDesc,lang,style,qKey);
+    pDone('ps3');setBar(55);
 
-    pAct('ps3');setBar(52);
+    // Step 4: Voice
+    pAct('ps4');setBar(57);
     const vData=await synthVoice(genScript,lang);
-    pDone('ps3');setBar(70);
+    pDone('ps4');setBar(72);
 
-    pAct('ps4');setBar(72);
+    // Step 5: Music
+    pAct('ps5');setBar(74);
     const mData=curMusic!=='none'?await genMusic(curMusic,30):null;
-    pDone('ps4');setBar(85);
+    pDone('ps5');setBar(87);
 
-    pAct('ps5');setBar(87);
+    // Step 6: Merge
+    pAct('ps6');setBar(89);
     finalBlob=await mergeAll(selVideo,vData,mData);
-    pDone('ps5');setBar(100);
+    pDone('ps6');setBar(100);
 
-    showResult();
-    saveCV();
-    setStep(4);
+    showResult();saveCV();setStep(4);
+
   }catch(err){
     console.error(err);
     toast('Error: '+err.message,'err');
@@ -371,21 +421,23 @@ async function startGen(){
 
 function setBar(p){document.getElementById('progBar').style.width=p+'%';}
 function pAct(id){
-  const e=document.getElementById(id);e.classList.add('active');
+  document.getElementById(id).classList.add('active');
   document.getElementById(id.replace('ps','s')+'i').innerHTML='<div class="spin"></div>';
 }
 function pDone(id){
-  const e=document.getElementById(id);e.classList.remove('active');e.classList.add('done');
+  const e=document.getElementById(id);
+  e.classList.remove('active');e.classList.add('done');
   document.getElementById(id.replace('ps','s')+'i').textContent='✅';
 }
 
-// ── FRAMES ──
+// ── FRAME EXTRACTION ──
 function extractFrames(file,count){
   return new Promise((res,rej)=>{
     const v=document.createElement('video');
     v.src=URL.createObjectURL(file);v.muted=true;
     v.addEventListener('loadedmetadata',async()=>{
-      const dur=v.duration,frames=[],c=document.createElement('canvas');
+      const dur=v.duration,frames=[];
+      const c=document.createElement('canvas');
       c.width=480;c.height=270;
       const ctx=c.getContext('2d');
       for(let i=0;i<count;i++){
@@ -399,19 +451,18 @@ function extractFrames(file,count){
   });
 }
 function seek(v,t){
-  return new Promise(r=>{v.currentTime=t;v.addEventListener('seeked',r,{once:true});});
+  return new Promise(r=>{
+    v.currentTime=t;
+    v.addEventListener('seeked',r,{once:true});
+  });
 }
 
-// ── GEMINI API (FREE) ──
-async function geminiScript(frames,lang,style,key){
-  const isHindi=lang.startsWith('hi');
-  const styles={energetic:'exciting & high-energy',calm:'calm & soothing',dramatic:'dramatic & cinematic',friendly:'friendly & warm'};
-
+// ── GEMINI VISION (analyze only, no script) ──
+async function geminiAnalyze(frames,key){
   const parts=[
-    {text:`Write a SHORT ${styles[style]} video voiceover in ${isHindi?'Hindi (Devanagari script)':'English'}. Maximum 60 words. Write ONLY the spoken narration text, nothing else. No stage directions, no labels.`},
+    {text:'Describe what is happening in these video frames in 2-3 sentences. Be specific about characters, actions, setting, and mood. This description will be used to write a voiceover script.'},
     ...frames.map(f=>({inline_data:{mime_type:'image/jpeg',data:f}}))
   ];
-
   const r=await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`,
     {
@@ -419,17 +470,52 @@ async function geminiScript(frames,lang,style,key){
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
         contents:[{parts}],
-        generationConfig:{maxOutputTokens:200,temperature:0.7}
+        generationConfig:{maxOutputTokens:150,temperature:0.4}
       })
     }
   );
-
-  if(!r.ok){
-    const e=await r.json();
-    throw new Error(e.error?.message||'Gemini API failed. Check your key in Settings.');
-  }
+  if(!r.ok){const e=await r.json();throw new Error('Gemini: '+(e.error?.message||'Failed. Check Gemini key in Settings'));}
   const d=await r.json();
-  return d.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||'Amazing video content!';
+  return d.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||'An interesting video scene.';
+}
+
+// ── GROQ SCRIPT (fast LLaMA) ──
+async function groqScript(desc,lang,style,key){
+  const isHindi=lang.startsWith('hi');
+  const styles={
+    energetic:'exciting, high-energy, enthusiastic',
+    calm:'calm, soothing, peaceful',
+    dramatic:'dramatic, cinematic, intense',
+    friendly:'friendly, warm, conversational'
+  };
+  const prompt=`You are a voiceover scriptwriter. Based on this video description, write a ${styles[style]} voiceover narration in ${isHindi?'Hindi (Devanagari script)':'English'}.
+
+Video description: ${desc}
+
+Rules:
+- Maximum 60 words
+- Only the spoken narration text
+- No stage directions, labels, or explanations
+- Make it ${styles[style]} and engaging
+
+Write the voiceover now:`;
+
+  const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'Authorization':'Bearer '+key
+    },
+    body:JSON.stringify({
+      model:'llama-3.1-8b-instant',
+      messages:[{role:'user',content:prompt}],
+      max_tokens:200,
+      temperature:0.7
+    })
+  });
+  if(!r.ok){const e=await r.json();throw new Error('Groq: '+(e.error?.message||'Failed. Check Groq key in Settings'));}
+  const d=await r.json();
+  return d.choices?.[0]?.message?.content?.trim()||'Amazing content unfolds before your eyes!';
 }
 
 // ── VOICE ──
@@ -440,7 +526,7 @@ function synthVoice(text,lang){
     const chunks=[];
     const rec=new MediaRecorder(dest.stream);
     rec.ondataavailable=e=>chunks.push(e.data);
-    rec.onstop=()=>res({blob:new Blob(chunks,{type:'audio/webm'}),ac,dest});
+    rec.onstop=()=>res({blob:new Blob(chunks,{type:'audio/webm'})});
     const u=new SpeechSynthesisUtterance(text);
     u.lang=lang;u.rate=0.92;u.pitch=1;u.volume=1;
     const voices=speechSynthesis.getVoices();
@@ -448,7 +534,7 @@ function synthVoice(text,lang){
     if(m)u.voice=m;
     rec.start();
     u.onend=()=>rec.stop();
-    u.onerror=rej;
+    u.onerror=e=>{rec.stop();rej(new Error('Voice synthesis failed'));};
     speechSynthesis.speak(u);
   });
 }
@@ -493,35 +579,50 @@ function genMusic(style,dur=30){
 async function mergeAll(vFile,vData,mBlob){
   const ac=new(window.AudioContext||window.webkitAudioContext)();
   const dest=ac.createMediaStreamDestination();
+
+  // Voice
   const vBuf=await ac.decodeAudioData(await vData.blob.arrayBuffer());
   const vSrc=ac.createBufferSource();vSrc.buffer=vBuf;
   const vG=ac.createGain();vG.gain.value=1;
   vSrc.connect(vG);vG.connect(dest);
+
+  // Music
+  let mSrc=null;
   if(mBlob){
     try{
       const mBuf=await ac.decodeAudioData(await mBlob.arrayBuffer());
-      const mSrc=ac.createBufferSource();mSrc.buffer=mBuf;
+      mSrc=ac.createBufferSource();mSrc.buffer=mBuf;
       const mG=ac.createGain();mG.gain.value=.22;
       mSrc.connect(mG);mG.connect(dest);
-      mSrc._src=mSrc;
-      window._mSrc=mSrc;
-    }catch(e){console.warn(e);}
+    }catch(e){console.warn('Music skip',e);}
   }
+
   const vid=document.createElement('video');
   vid.src=URL.createObjectURL(vFile);vid.muted=true;
   await vid.play();
+
   const c=document.createElement('canvas');
   c.width=1280;c.height=720;
   const ctx=c.getContext('2d');
-  const stream=new MediaStream([...c.captureStream(30).getVideoTracks(),...dest.stream.getAudioTracks()]);
-  const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(t=>MediaRecorder.isTypeSupported(t))||'video/webm';
+  const stream=new MediaStream([
+    ...c.captureStream(30).getVideoTracks(),
+    ...dest.stream.getAudioTracks()
+  ]);
+  const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm']
+    .find(t=>MediaRecorder.isTypeSupported(t))||'video/webm';
   const rec=new MediaRecorder(stream,{mimeType:mime});
   const chunks=[];
   rec.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data);};
+
   return new Promise(res=>{
     rec.onstop=()=>res(new Blob(chunks,{type:'video/webm'}));
-    function draw(){if(!vid.paused&&!vid.ended){ctx.drawImage(vid,0,0,c.width,c.height);requestAnimationFrame(draw);}}
-    rec.start(100);vSrc.start();if(window._mSrc)window._mSrc.start();draw();
+    function draw(){
+      if(!vid.paused&&!vid.ended){
+        ctx.drawImage(vid,0,0,c.width,c.height);
+        requestAnimationFrame(draw);
+      }
+    }
+    rec.start(100);vSrc.start();if(mSrc)mSrc.start();draw();
     vid.onended=()=>setTimeout(()=>{rec.stop();ac.close();},400);
     setTimeout(()=>{if(rec.state==='recording'){rec.stop();ac.close();}},120000);
   });
@@ -555,7 +656,7 @@ function playVoice(){
   toast('Playing...','ok');
 }
 function resetApp(){
-  selVideo=null;finalBlob=null;genScript='';
+  selVideo=null;finalBlob=null;genScript='';videoDesc='';
   document.getElementById('videoInput').value='';
   document.getElementById('vPreview').style.display='none';
   document.getElementById('vinfo').style.display='none';
@@ -563,7 +664,7 @@ function resetApp(){
   document.getElementById('resCard').style.display='none';
   document.getElementById('genBtn').disabled=false;
   document.querySelectorAll('.ps').forEach(s=>s.classList.remove('active','done'));
-  ['s1i','s2i','s3i','s4i','s5i'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML='';});
+  for(let i=1;i<=6;i++){const e=document.getElementById('s'+i+'i');if(e)e.innerHTML='';}
   setBar(0);setStep(1);
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -586,7 +687,8 @@ function saveCV(){
       data:reader.result
     });
     while(vids.length>10)vids.shift();
-    localStorage.setItem('vs_vids',JSON.stringify(vids));
+    try{localStorage.setItem('vs_vids',JSON.stringify(vids));}
+    catch(e){toast('Storage full, video not saved','err');}
   };
   reader.readAsDataURL(finalBlob);
 }
@@ -599,9 +701,9 @@ function renderCV(){
   cleanExpired();
   const vids=getCVs();
   const list=document.getElementById('cvList');
-  document.getElementById('cvBadge').textContent=vids.length?`(${vids.length})`:'';
+  document.getElementById('cvBadge').textContent=vids.length?'('+vids.length+')':'';
   if(!vids.length){
-    list.innerHTML='<div class="cv-empty"><div class="e">🎬</div><div>No completed videos yet</div></div>';
+    list.innerHTML='<div class="cv-empty"><div class="e">🎬</div><div>No completed videos yet</div><div style="font-size:.75rem;margin-top:4px">Generate your first video!</div></div>';
     return;
   }
   list.innerHTML='';
@@ -646,7 +748,7 @@ function toast(msg,type=''){
   const t=document.getElementById('toast');
   t.textContent=msg;
   t.className='toast '+(type==='err'?'err':type==='ok'?'ok':'')+' show';
-  setTimeout(()=>t.classList.remove('show'),3000);
+  setTimeout(()=>t.classList.remove('show'),3500);
 }
 </script>
 </body>
