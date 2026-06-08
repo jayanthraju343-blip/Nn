@@ -17,7 +17,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .wrap{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:20px 14px 80px}
 
 .tabs{display:flex;gap:6px;margin-bottom:20px;background:var(--surface);padding:6px;border-radius:14px;border:1px solid var(--border)}
-.tab{flex:1;padding:11px 6px;border:none;border-radius:10px;background:transparent;color:var(--muted);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;-webkit-tap-highlight-color:transparent}
+.tab{flex:1;padding:11px 6px;border:none;border-radius:10px;background:transparent;color:var(--muted);font-size:.83rem;font-weight:600;cursor:pointer;transition:all .2s;text-align:center}
 .tab.active{background:var(--card);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .page{display:none}.page.active{display:block}
 
@@ -36,39 +36,59 @@ header p{color:var(--muted);font-size:.85rem}
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:14px}
 .card-title{font-size:.95rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 
-.upload-zone{border:2px dashed var(--border);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.02);position:relative;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+/* HOW TO */
+.howto{background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);border-radius:12px;padding:14px;margin-bottom:14px}
+.howto-title{font-size:.85rem;font-weight:700;color:#c4b5fd;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.howto-step{display:flex;gap:10px;margin-bottom:8px;font-size:.8rem;color:var(--muted);align-items:flex-start}
+.howto-step:last-child{margin-bottom:0}
+.howto-num{width:20px;height:20px;border-radius:50%;background:var(--accent2);color:#fff;font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.howto-step span{color:var(--text)}
+
+/* CLICK DETECTOR */
+.click-detector{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px}
+.cd-title{font-size:.82rem;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.cd-btn{width:100%;padding:16px;background:linear-gradient(135deg,rgba(124,58,237,.3),rgba(255,107,53,.3));border:2px dashed var(--border);border-radius:10px;color:var(--text);font-size:.9rem;cursor:pointer;transition:all .2s;font-weight:600;margin-bottom:8px}
+.cd-btn:active{transform:scale(.97);background:linear-gradient(135deg,rgba(124,58,237,.5),rgba(255,107,53,.5));}
+.cd-result{display:flex;align-items:center;justify-content:space-between;font-size:.82rem}
+.cd-style{font-weight:700;font-size:.9rem}
+.cd-style.energetic{color:#f97316}
+.cd-style.calm{color:#06b6d4}
+.cd-style.dramatic{color:#8b5cf6}
+.cd-style.friendly{color:var(--success)}
+.cd-count{color:var(--muted);font-size:.75rem}
+.cd-bar{height:4px;background:var(--border);border-radius:99px;margin-top:8px;overflow:hidden}
+.cd-fill{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:99px;width:0%;transition:width .3s}
+
+.upload-zone{border:2px dashed var(--border);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.02);position:relative;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .upload-zone:hover,.upload-zone.over{border-color:var(--accent);background:rgba(255,107,53,.05)}
 .upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.u-icon{font-size:2rem;margin-bottom:8px}
-.upload-zone h3{font-size:.92rem;margin-bottom:4px}
-.upload-zone p{color:var(--muted);font-size:.78rem}
+.u-icon{font-size:2rem;margin-bottom:6px}
+.upload-zone h3{font-size:.9rem;margin-bottom:3px}
+.upload-zone p{color:var(--muted);font-size:.77rem}
 #vPreview{display:none;width:100%;border-radius:10px;max-height:200px;object-fit:contain;background:#000;margin-top:10px}
-.vinfo{display:none;margin-top:10px;padding:9px 12px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:8px;font-size:.8rem;color:var(--success)}
+.vinfo{display:none;margin-top:8px;padding:8px 12px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:8px;font-size:.8rem;color:var(--success)}
 
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.fg{margin-bottom:0}
+.fg{margin-bottom:10px}
 .fg label{display:block;font-size:.72rem;color:var(--muted);margin-bottom:5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-select,input[type=text],input[type=password]{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:11px 12px;font-size:.9rem;outline:none;transition:border-color .2s;-webkit-appearance:none;font-family:inherit}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+select,input[type=text],input[type=password]{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:11px 12px;font-size:.88rem;outline:none;transition:border-color .2s;-webkit-appearance:none;font-family:inherit}
 select:focus,input:focus{border-color:var(--accent)}
 .api-note{font-size:.73rem;color:var(--muted);margin-top:6px;line-height:1.6}
 .api-note a{color:var(--accent);text-decoration:none}
 .saved-ok{display:none;background:rgba(16,185,129,.15);color:var(--success);font-size:.68rem;padding:2px 7px;border-radius:4px;margin-left:6px}
 
-/* topic input */
-.topic-hint{font-size:.75rem;color:var(--muted);margin-top:6px}
+/* STYLE PILLS */
+.style-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.style-pill{padding:7px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--muted);font-size:.8rem;cursor:pointer;transition:all .2s;font-weight:500}
+.style-pill.active{border-color:var(--accent);background:rgba(255,107,53,.1);color:var(--accent)}
+.auto-tag{font-size:.68rem;background:rgba(16,185,129,.15);color:var(--success);padding:1px 6px;border-radius:4px;margin-left:4px}
 
-.music-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.mb{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:9px 6px;text-align:center;cursor:pointer;transition:all .2s;color:var(--text);font-size:.78rem;width:100%;-webkit-tap-highlight-color:transparent}
-.mb:active{transform:scale(.97)}
-.mb.sel{border-color:var(--accent2);background:rgba(124,58,237,.15);color:#c4b5fd}
-.mb .e{font-size:1.1rem;display:block;margin-bottom:3px}
-
-.btn-gen{width:100%;padding:16px;background:linear-gradient(135deg,var(--accent),#e55a2b);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-gen{width:100%;padding:16px;background:linear-gradient(135deg,var(--accent),#e55a2b);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px;touch-action:manipulation}
 .btn-gen:active{transform:scale(.98)}
 .btn-gen:disabled{opacity:.5;cursor:not-allowed;transform:none}
 
 .prog-card{display:none}
-.prog-bar-wrap{background:var(--surface);border-radius:99px;height:5px;margin-bottom:14px;overflow:hidden}
+.prog-bar-wrap{background:var(--surface);border-radius:99px;height:5px;margin-bottom:8px;overflow:hidden}
 .prog-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;width:0%;transition:width .5s}
 .prog-label{text-align:center;font-size:.8rem;color:var(--muted);margin-bottom:12px}
 .psteps{display:flex;flex-direction:column;gap:7px}
@@ -85,7 +105,7 @@ select:focus,input:focus{border-color:var(--accent)}
 .res-card{display:none}
 .res-video{width:100%;border-radius:10px;background:#000;max-height:240px}
 .res-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.btn-act{padding:12px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.83rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;font-weight:500;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-act{padding:12px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.83rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;font-weight:500;touch-action:manipulation}
 .btn-act:active{transform:scale(.97)}
 .btn-act.pri{background:linear-gradient(135deg,var(--accent2),#5b21b6);border-color:transparent;color:#fff}
 .script-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:.82rem;line-height:1.7;color:#d0d0e0;margin-top:12px;max-height:160px;overflow-y:auto;white-space:pre-wrap;display:none}
@@ -106,7 +126,7 @@ select:focus,input:focus{border-color:var(--accent)}
 .cv-name{font-size:.85rem;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cv-meta{font-size:.72rem;color:var(--muted);margin-bottom:3px}
 .cv-exp{font-size:.7rem;color:var(--danger);margin-bottom:5px}
-.cv-btns{display:flex;gap:5px;flex-wrap:wrap}
+.cv-btns{display:flex;gap:5px}
 .cv-btn{padding:5px 10px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:.72rem;cursor:pointer}
 .cv-btn.del{color:var(--danger);border-color:rgba(239,68,68,.3)}
 
@@ -120,11 +140,7 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
 
 ::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-@media(max-width:480px){
-  .grid2{grid-template-columns:1fr}
-  .music-grid{grid-template-columns:repeat(2,1fr)}
-  .res-acts{grid-template-columns:1fr}
-}
+@media(max-width:480px){.grid2{grid-template-columns:1fr}.res-acts{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -138,7 +154,7 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
   <p>Upload video → AI writes script → Voice + Music added</p>
   <div class="badges">
     <div class="badge green">✨ 100% FREE</div>
-    <div class="badge orange">⚡ Groq AI (Fast)</div>
+    <div class="badge orange">⚡ Groq AI</div>
     <div class="badge purple">📱 Mobile Ready</div>
   </div>
 </header>
@@ -146,21 +162,24 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
 <div class="tabs">
   <button class="tab active" onclick="switchTab('create')">🎬 Create</button>
   <button class="tab" onclick="switchTab('completed')">✅ Completed</button>
+  <button class="tab" onclick="switchTab('guide')">📖 Guide</button>
   <button class="tab" onclick="switchTab('settings')">⚙️ Settings</button>
 </div>
 
 <!-- CREATE -->
 <div class="page active" id="page-create">
+
   <div class="steps-row">
     <div class="stp active" id="st1"><div class="stp-n">1</div>Upload</div>
     <div class="stp-div">›</div>
-    <div class="stp" id="st2"><div class="stp-n">2</div>Settings</div>
+    <div class="stp" id="st2"><div class="stp-n">2</div>Style</div>
     <div class="stp-div">›</div>
     <div class="stp" id="st3"><div class="stp-n">3</div>Generate</div>
     <div class="stp-div">›</div>
     <div class="stp" id="st4"><div class="stp-n">4</div>Done</div>
   </div>
 
+  <!-- Upload -->
   <div class="card">
     <div class="card-title">📹 Upload Video</div>
     <div class="upload-zone" id="uploadZone">
@@ -173,62 +192,65 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
     <div class="vinfo" id="vinfo"></div>
   </div>
 
+  <!-- Topic -->
   <div class="card">
-    <div class="card-title">📝 Video Topic (Optional)</div>
+    <div class="card-title">📝 Video Topic</div>
     <div class="fg">
-      <input type="text" id="topicInput" placeholder="e.g. Craftland gameplay, travel vlog, cooking..."/>
+      <input type="text" id="topicInput" placeholder="e.g. Craftland gameplay, travel vlog, funny moments..."/>
     </div>
-    <div class="topic-hint">💡 Describe your video so AI writes a better script</div>
+    <div style="font-size:.75rem;color:var(--muted);margin-top:5px">💡 Tell AI what your video is about for better script</div>
   </div>
 
+  <!-- Click Detector -->
   <div class="card">
-    <div class="card-title">🎙️ Voice Settings</div>
-    <div class="grid2">
-      <div class="fg">
-        <label>Language</label>
-        <select id="langSel">
-          <option value="en-US">🇺🇸 English</option>
-          <option value="hi-IN">🇮🇳 Hindi</option>
-        </select>
+    <div class="card-title">👆 Auto Style Detector</div>
+    <div class="click-detector">
+      <div class="cd-title">🎯 Tap the button fast or slow to set your style!</div>
+      <button class="cd-btn" id="cdBtn" onclick="registerClick()">
+        👆 TAP ME! (Fast = Energetic | Slow = Calm)
+      </button>
+      <div class="cd-result">
+        <div>Style detected: <span class="cd-style" id="cdStyle">Tap to detect...</span></div>
+        <div class="cd-count" id="cdCount">0 taps</div>
       </div>
-      <div class="fg">
-        <label>Style</label>
-        <select id="styleSel">
-          <option value="energetic">⚡ Energetic</option>
-          <option value="calm">😌 Calm</option>
-          <option value="dramatic">🎭 Dramatic</option>
-          <option value="friendly">😊 Friendly</option>
-        </select>
+      <div class="cd-bar"><div class="cd-fill" id="cdFill"></div></div>
+    </div>
+
+    <div class="fg" style="margin-top:12px">
+      <label>Voice Style <span class="auto-tag" id="autoTag">AUTO</span></label>
+      <div class="style-pills">
+        <button class="style-pill active" data-s="energetic" onclick="setStyle(this)">⚡ Energetic</button>
+        <button class="style-pill" data-s="calm" onclick="setStyle(this)">😌 Calm</button>
+        <button class="style-pill" data-s="dramatic" onclick="setStyle(this)">🎭 Dramatic</button>
+        <button class="style-pill" data-s="friendly" onclick="setStyle(this)">😊 Friendly</button>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">🎵 Background Music</div>
-    <div class="music-grid">
-      <button class="mb sel" data-m="chill" onclick="selMus(this)"><span class="e">🌊</span>Chill Lofi</button>
-      <button class="mb" data-m="epic" onclick="selMus(this)"><span class="e">🔥</span>Epic</button>
-      <button class="mb" data-m="happy" onclick="selMus(this)"><span class="e">✨</span>Happy</button>
-      <button class="mb" data-m="dramatic" onclick="selMus(this)"><span class="e">🎭</span>Dramatic</button>
-      <button class="mb" data-m="gaming" onclick="selMus(this)"><span class="e">🎮</span>Gaming</button>
-      <button class="mb" data-m="none" onclick="selMus(this)"><span class="e">🔇</span>No Music</button>
+    <div class="fg" style="margin-top:10px">
+      <label>Language</label>
+      <select id="langSel">
+        <option value="en-US">🇺🇸 English</option>
+        <option value="hi-IN">🇮🇳 Hindi</option>
+      </select>
     </div>
   </div>
 
   <button class="btn-gen" id="genBtn" onclick="startGen()">🚀 Generate Voiceover</button>
 
+  <!-- Progress -->
   <div class="card prog-card" id="progCard">
     <div class="card-title">⏳ Processing...</div>
     <div class="prog-bar-wrap"><div class="prog-bar" id="progBar"></div></div>
     <div class="prog-label" id="progLabel">Starting...</div>
     <div class="psteps">
       <div class="ps" id="ps1"><div class="pi">⚡</div><div class="pt"><div class="pl">Groq AI Script</div><div class="ps2">Writing voiceover narration</div></div><div id="s1i"></div></div>
-      <div class="ps" id="ps2"><div class="pi">🎙️</div><div class="pt"><div class="pl">Voice Synthesis</div><div class="ps2">Converting to speech</div></div><div id="s2i"></div></div>
-      <div class="ps" id="ps3"><div class="pi">🎵</div><div class="pt"><div class="pl">Music Generation</div><div class="ps2">Copyright-free background music</div></div><div id="s3i"></div></div>
-      <div class="ps" id="ps4"><div class="pi">🎬</div><div class="pt"><div class="pl">Final Merge</div><div class="ps2">Combining everything</div></div><div id="s4i"></div></div>
+      <div class="ps" id="ps2"><div class="pi">🎙️</div><div class="pt"><div class="pl">Voice Synthesis</div><div class="ps2">Converting script to speech</div></div><div id="s2i"></div></div>
+      <div class="ps" id="ps3"><div class="pi">🎵</div><div class="pt"><div class="pl">Background Music</div><div class="ps2">Generating copyright-free music</div></div><div id="s3i"></div></div>
+      <div class="ps" id="ps4"><div class="pi">🎬</div><div class="pt"><div class="pl">Final Merge</div><div class="ps2">Combining video + voice + music</div></div><div id="s4i"></div></div>
     </div>
   </div>
 
+  <!-- Result -->
   <div class="card res-card" id="resCard">
     <div class="card-title">🎉 Your Video is Ready!</div>
     <video class="res-video" id="resVideo" controls playsinline></video>
@@ -237,7 +259,7 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
       <button class="btn-act pri" onclick="dlVideo()">⬇️ Download</button>
       <button class="btn-act" onclick="toggleScript()">📝 Script</button>
       <button class="btn-act" onclick="resetApp()">🔄 New Video</button>
-      <button class="btn-act" onclick="playVoice()">🔊 Voice Only</button>
+      <button class="btn-act" onclick="playVoiceOnly()">🔊 Voice Only</button>
     </div>
   </div>
 </div>
@@ -250,6 +272,57 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
   </div>
 </div>
 
+<!-- GUIDE -->
+<div class="page" id="page-guide">
+  <div class="card">
+    <div class="card-title">📖 How to Use VoiceOver Studio</div>
+    <div class="howto">
+      <div class="howto-title">🚀 Quick Start Guide</div>
+      <div class="howto-step"><div class="howto-num">1</div><div><span>Settings tab లో Groq API key add చేయండి</span> — console.groq.com లో free గా తీసుకోవచ్చు</div></div>
+      <div class="howto-step"><div class="howto-num">2</div><div><span>Create tab లో వెళ్ళి video upload చేయండి</span> — gallery నుండి MP4, MOV select చేయండి</div></div>
+      <div class="howto-step"><div class="howto-num">3</div><div><span>Video topic type చేయండి</span> — "Craftland gameplay", "travel vlog" లాంటివి</div></div>
+      <div class="howto-step"><div class="howto-num">4</div><div><span>👆 TAP ME button tap చేయండి</span> — fast tap చేస్తే Energetic style, slow చేస్తే Calm style auto detect అవుతుంది!</div></div>
+      <div class="howto-step"><div class="howto-num">5</div><div><span>Language select చేయండి</span> — English లేదా Hindi</div></div>
+      <div class="howto-step"><div class="howto-num">6</div><div><span>🚀 Generate Voiceover button నొక్కండి</span> — AI script రాస్తుంది, voice add అవుతుంది, music generate అవుతుంది</div></div>
+      <div class="howto-step"><div class="howto-num">7</div><div><span>⬇️ Download చేయండి</span> — final video మీ phone లో save అవుతుంది</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">👆 Style Detection ఎలా పని చేస్తుంది?</div>
+    <div style="font-size:.82rem;color:var(--muted);line-height:1.8">
+      <b style="color:var(--text)">Fast taps (5+ in 3 sec)</b> → ⚡ Energetic style<br>
+      <b style="color:var(--text)">Medium taps (3-4 in 3 sec)</b> → 😊 Friendly style<br>
+      <b style="color:var(--text)">Slow taps (2 in 3 sec)</b> → 🎭 Dramatic style<br>
+      <b style="color:var(--text)">Very slow (1 tap)</b> → 😌 Calm style<br><br>
+      లేదా manually style pills tap చేసి select చేయవచ్చు!
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🎵 Music గురించి</div>
+    <div style="font-size:.82rem;color:var(--muted);line-height:1.8">
+      Music మీరు select చేసిన style బట్టి automatically generate అవుతుంది:<br><br>
+      <b style="color:var(--text)">⚡ Energetic</b> → Fast, upbeat rhythm<br>
+      <b style="color:var(--text)">😌 Calm</b> → Soft, peaceful melody<br>
+      <b style="color:var(--text)">🎭 Dramatic</b> → Deep, cinematic sound<br>
+      <b style="color:var(--text)">😊 Friendly</b> → Happy, bright tones<br><br>
+      <b style="color:var(--success)">100% copyright-free — browser లోనే generate అవుతుంది!</b>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">❓ Voice రావడం లేదా?</div>
+    <div style="font-size:.82rem;color:var(--muted);line-height:1.8">
+      • <b style="color:var(--text)">Chrome browser</b> use చేయండి (best support)<br>
+      • Phone <b style="color:var(--text)">silent mode off</b> చేయండి<br>
+      • <b style="color:var(--text)">Volume</b> max చేయండి<br>
+      • Downloaded video లో sound check చేయండి<br>
+      • iOS లో Safari కంటే Chrome better గా work చేస్తుంది
+    </div>
+  </div>
+</div>
+
 <!-- SETTINGS -->
 <div class="page" id="page-settings">
   <div class="card">
@@ -259,27 +332,14 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
     </div>
     <div class="api-note">
       🆓 100% FREE → <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a><br>
-      Sign up with Google → "Create API Key" → Copy → Paste here<br>
+      Sign up → "Create API Key" → Copy → Paste here<br>
       🔒 Saved in your browser only
     </div>
   </div>
-
   <div class="card">
     <div class="card-title">🗑️ Storage</div>
     <button class="btn-act" onclick="clearAll()" style="width:100%;justify-content:center;border-color:rgba(239,68,68,.3);color:var(--danger)">🗑️ Clear All Saved Videos</button>
     <div style="font-size:.73rem;color:var(--muted);margin-top:8px">Videos auto-delete after 3 days</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">ℹ️ How It Works</div>
-    <div style="font-size:.8rem;color:var(--muted);line-height:1.8">
-      <b style="color:var(--text)">1.</b> You describe your video topic (optional)<br>
-      <b style="color:var(--text)">2.</b> Groq LLaMA writes the voiceover script instantly<br>
-      <b style="color:var(--text)">3.</b> Browser converts script to natural speech<br>
-      <b style="color:var(--text)">4.</b> Copyright-free music generated locally<br>
-      <b style="color:var(--text)">5.</b> Everything merged into final video<br><br>
-      <b style="color:var(--success)">✅ 100% Free • No Gemini needed • Mobile friendly</b>
-    </div>
   </div>
 </div>
 
@@ -288,15 +348,24 @@ footer span{color:var(--accent);font-weight:700;letter-spacing:.05em}
 <div class="toast" id="toast"></div>
 
 <script>
-let selVideo=null,curMusic='chill',finalBlob=null,genScript='';
+// ── STATE ──
+let selVideo=null, finalBlob=null, genScript='';
+let curStyle='energetic', autoDetected=false;
+let clickTimes=[], clickResetTimer=null;
 const EXPIRE=3*24*60*60*1000;
 
-window.onload=()=>{loadKey();cleanExpired();speechSynthesis.getVoices();};
-speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();
+window.onload=()=>{ loadKey(); cleanExpired(); preloadVoices(); };
+
+function preloadVoices(){
+  if(window.speechSynthesis){
+    speechSynthesis.getVoices();
+    speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();
+  }
+}
 
 // ── TABS ──
 function switchTab(n){
-  ['create','completed','settings'].forEach((t,i)=>{
+  ['create','completed','guide','settings'].forEach((t,i)=>{
     document.querySelectorAll('.tab')[i].classList.toggle('active',t===n);
     document.getElementById('page-'+t).classList.toggle('active',t===n);
   });
@@ -332,9 +401,55 @@ function loadVid(f){
   setStep(2);toast('Video loaded! ✅','ok');
 }
 
-function selMus(b){
-  document.querySelectorAll('.mb').forEach(x=>x.classList.remove('sel'));
-  b.classList.add('sel');curMusic=b.dataset.m;
+// ── CLICK DETECTOR ──
+function registerClick(){
+  const now=Date.now();
+  clickTimes.push(now);
+  // keep only last 10 seconds
+  clickTimes=clickTimes.filter(t=>now-t<10000);
+
+  clearTimeout(clickResetTimer);
+  clickResetTimer=setTimeout(()=>{ clickTimes=[]; }, 5000);
+
+  const count=clickTimes.length;
+  const span=count>1?(clickTimes[count-1]-clickTimes[0])/1000:0;
+  const rate=span>0?count/span:count;
+
+  let detected='energetic';
+  if(rate>=4) detected='energetic';
+  else if(rate>=2.5) detected='friendly';
+  else if(rate>=1.5) detected='dramatic';
+  else detected='calm';
+
+  curStyle=detected;
+  autoDetected=true;
+
+  // Update UI
+  const styleEl=document.getElementById('cdStyle');
+  const labels={energetic:'⚡ Energetic',friendly:'😊 Friendly',dramatic:'🎭 Dramatic',calm:'😌 Calm'};
+  styleEl.textContent=labels[detected];
+  styleEl.className='cd-style '+detected;
+  document.getElementById('cdCount').textContent=count+' tap'+(count!==1?'s':'');
+  document.getElementById('cdFill').style.width=Math.min(rate/5*100,100)+'%';
+  document.getElementById('autoTag').textContent='AUTO ✓';
+
+  // Sync pills
+  document.querySelectorAll('.style-pill').forEach(p=>{
+    p.classList.toggle('active',p.dataset.s===detected);
+  });
+
+  // Flash button
+  const btn=document.getElementById('cdBtn');
+  btn.style.background='linear-gradient(135deg,rgba(124,58,237,.6),rgba(255,107,53,.6))';
+  setTimeout(()=>btn.style.background='',200);
+}
+
+function setStyle(btn){
+  document.querySelectorAll('.style-pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  curStyle=btn.dataset.s;
+  autoDetected=false;
+  document.getElementById('autoTag').textContent='MANUAL';
 }
 
 function setStep(n){
@@ -346,7 +461,7 @@ function setStep(n){
   }
 }
 
-// ── MAIN ──
+// ── MAIN GENERATION ──
 async function startGen(){
   if(!selVideo){toast('Upload video first!','err');return;}
   const key=getKey();
@@ -358,30 +473,32 @@ async function startGen(){
   setStep(3);setBar(0);setLbl('Starting...');
 
   try{
-    // Step 1: Groq script (instant!)
-    pAct('ps1');setBar(5);setLbl('Writing script...');
     const lang=document.getElementById('langSel').value;
-    const style=document.getElementById('styleSel').value;
     const topic=document.getElementById('topicInput').value.trim();
-    genScript=await groqScript(topic,selVideo.name,lang,style,key);
-    pDone('ps1');setBar(30);
 
-    // Step 2: Voice
-    pAct('ps2');setBar(32);setLbl('Creating voice...');
-    const vData=await synthVoice(genScript,lang);
+    // Step 1: Groq Script
+    pAct('ps1');setBar(5);setLbl('AI writing script...');
+    genScript=await groqScript(topic,selVideo.name,lang,curStyle,key);
+    pDone('ps1');setBar(28);
+
+    // Step 2: Voice — using improved method
+    pAct('ps2');setBar(30);setLbl('Creating voice...');
+    const voiceBlob=await makeVoice(genScript,lang);
     pDone('ps2');setBar(55);
 
-    // Step 3: Music (15 sec only = faster!)
+    // Step 3: Music
     pAct('ps3');setBar(57);setLbl('Generating music...');
-    const mData=curMusic!=='none'?await genMusic(curMusic,15):null;
+    const musicBlob=await genMusic(curStyle,15);
     pDone('ps3');setBar(78);
 
     // Step 4: Merge
-    pAct('ps4');setBar(80);setLbl('Merging video...');
-    finalBlob=await mergeAll(selVideo,vData,mData);
+    pAct('ps4');setBar(80);setLbl('Merging everything...');
+    finalBlob=await mergeVideoAudio(selVideo,voiceBlob,musicBlob);
     pDone('ps4');setBar(100);setLbl('Done! 🎉');
 
-    showResult();saveCV();setStep(4);
+    showResult();
+    saveCV();
+    setStep(4);
 
   }catch(err){
     console.error(err);
@@ -407,231 +524,280 @@ function pDone(id){
 async function groqScript(topic,filename,lang,style,key){
   const isHindi=lang.startsWith('hi');
   const styles={
-    energetic:'exciting, high-energy, enthusiastic, dynamic',
+    energetic:'exciting, high-energy, enthusiastic, pumped-up',
     calm:'calm, soothing, peaceful, relaxing',
     dramatic:'dramatic, cinematic, intense, powerful',
     friendly:'friendly, warm, fun, conversational'
   };
-
-  // Smart context from filename + topic
-  const context=topic
-    ?`Video topic: "${topic}"`
-    :`Video file: "${filename.replace(/\.[^.]+$/,'').replace(/[_-]/g,' ')}"`;
-
-  const prompt=`You are a professional voiceover scriptwriter for short videos.
-
+  const context=topic?`Video topic: "${topic}"`:`Video: "${filename.replace(/\.[^.]+$/,'').replace(/[_-]/g,' ')}"`;
+  const prompt=`You are a professional voiceover scriptwriter.
 ${context}
-
-Write a ${styles[style]} voiceover script in ${isHindi?'Hindi (Devanagari script only, no English words)':'English'}.
-
-Rules:
-- Maximum 55 words
-- ONLY the spoken narration text
-- NO stage directions, NO labels, NO explanations
-- Make it ${styles[style]} and captivating
-- Sound natural when spoken aloud
-
-Write the voiceover script:`;
+Write a SHORT ${styles[style]} voiceover in ${isHindi?'Hindi (Devanagari script only)':'English'}.
+Rules: Max 50 words. ONLY spoken narration. NO labels or directions. Sound natural when spoken.
+Write now:`;
 
   const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{
     method:'POST',
-    headers:{
-      'Content-Type':'application/json',
-      'Authorization':'Bearer '+key
-    },
+    headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
     body:JSON.stringify({
       model:'llama-3.1-8b-instant',
       messages:[{role:'user',content:prompt}],
-      max_tokens:150,
-      temperature:0.75
+      max_tokens:120,temperature:0.75
     })
   });
-
-  if(!r.ok){
-    const e=await r.json();
-    throw new Error('Groq: '+(e.error?.message||'Check your API key in Settings'));
-  }
+  if(!r.ok){const e=await r.json();throw new Error('Groq: '+(e.error?.message||'Check API key in Settings'));}
   const d=await r.json();
-  return d.choices?.[0]?.message?.content?.trim()||'An incredible moment unfolds. Watch as the story comes alive before your eyes!';
+  return d.choices?.[0]?.message?.content?.trim()||'What an incredible moment! Watch as something amazing unfolds.';
 }
 
-// ── VOICE ──
-function synthVoice(text,lang){
-  return new Promise((res,rej)=>{
-    // Check support
-    if(!window.speechSynthesis){rej(new Error('Speech not supported on this browser'));return;}
+// ── VOICE — improved with OfflineAudioContext ──
+function makeVoice(text, lang){
+  return new Promise((resolve, reject)=>{
+    if(!window.speechSynthesis){reject(new Error('Speech not supported. Use Chrome.'));return;}
 
-    const ac=new(window.AudioContext||window.webkitAudioContext)();
-    const dest=ac.createMediaStreamDestination();
-    const chunks=[];
-    const rec=new MediaRecorder(dest.stream);
-    rec.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data);};
-    rec.onstop=()=>res({blob:new Blob(chunks,{type:'audio/webm'})});
+    // Use MediaRecorder with AudioContext
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    const audioCtx = new AudioCtx();
+    const dest = audioCtx.createMediaStreamDestination();
 
-    const u=new SpeechSynthesisUtterance(text);
-    u.lang=lang;u.rate=0.9;u.pitch=1;u.volume=1;
+    // Create gain node to keep stream alive
+    const gain = audioCtx.createGain();
+    gain.gain.value = 0.001;
+    gain.connect(dest);
 
-    const voices=speechSynthesis.getVoices();
-    const match=voices.find(v=>v.lang.startsWith(lang.split('-')[0]));
-    if(match)u.voice=match;
+    // Oscillator to keep stream active
+    const osc = audioCtx.createOscillator();
+    osc.connect(gain);
+    osc.start();
 
-    rec.start();
-    u.onend=()=>{setTimeout(()=>rec.stop(),300);};
-    u.onerror=()=>{rec.stop();rej(new Error('Voice synthesis failed. Try Chrome browser.'));};
+    const chunks = [];
+    const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
+      ? 'audio/webm;codecs=opus'
+      : MediaRecorder.isTypeSupported('audio/webm')
+        ? 'audio/webm'
+        : 'audio/ogg';
 
-    // Timeout fallback
-    const timeout=setTimeout(()=>{
-      speechSynthesis.cancel();rec.stop();
-      rej(new Error('Voice timeout. Try shorter text or Chrome browser.'));
-    },30000);
-    u.onend=()=>{clearTimeout(timeout);setTimeout(()=>rec.stop(),300);};
+    const rec = new MediaRecorder(dest.stream, {mimeType});
+    rec.ondataavailable = e => { if(e.data && e.data.size > 0) chunks.push(e.data); };
+    rec.onstop = () => {
+      osc.stop();
+      audioCtx.close();
+      const blob = new Blob(chunks, {type: mimeType});
+      resolve(blob);
+    };
 
     speechSynthesis.cancel();
-    setTimeout(()=>speechSynthesis.speak(u),100);
+
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = lang;
+    utter.rate = 0.88;
+    utter.pitch = 1.0;
+    utter.volume = 1.0;
+
+    // Pick best voice
+    const voices = speechSynthesis.getVoices();
+    const langCode = lang.split('-')[0];
+    const match = voices.find(v => v.lang === lang) ||
+                  voices.find(v => v.lang.startsWith(langCode)) ||
+                  voices[0];
+    if(match) utter.voice = match;
+
+    let started = false;
+    const timeout = setTimeout(()=>{
+      if(!started){
+        speechSynthesis.cancel();
+        rec.stop();
+        reject(new Error('Voice timeout. Use Chrome browser.'));
+      }
+    }, 25000);
+
+    utter.onstart = () => { started = true; };
+    utter.onend = () => {
+      clearTimeout(timeout);
+      setTimeout(() => rec.stop(), 500);
+    };
+    utter.onerror = (e) => {
+      clearTimeout(timeout);
+      rec.stop();
+      reject(new Error('Voice error: '+e.error));
+    };
+
+    rec.start(100);
+    setTimeout(() => speechSynthesis.speak(utter), 150);
   });
 }
 
-// ── MUSIC (15 sec for speed) ──
-function genMusic(style,dur=15){
+// ── MUSIC ──
+function genMusic(style, dur=15){
   return new Promise(res=>{
-    const ac=new(window.AudioContext||window.webkitAudioContext)();
-    const dest=ac.createMediaStreamDestination();
+    const ac = new (window.AudioContext||window.webkitAudioContext)();
+    const dest = ac.createMediaStreamDestination();
     const cfgs={
-      chill:{bpm:75,notes:[261.6,293.7,329.6,392,440],wave:'sine',g:.08},
-      epic:{bpm:120,notes:[196,220,246.9,293.7,329.6],wave:'sawtooth',g:.05},
-      happy:{bpm:100,notes:[329.6,392,440,523.3,587.3],wave:'triangle',g:.07},
-      dramatic:{bpm:60,notes:[164.8,196,220,246.9,293.7],wave:'sawtooth',g:.05},
-      gaming:{bpm:140,notes:[220,261.6,329.6,392,493.9],wave:'square',g:.04}
+      energetic:{bpm:130,notes:[220,261.6,329.6,392,493.9],wave:'square',g:.04},
+      calm:{bpm:65,notes:[261.6,293.7,329.6,392,440],wave:'sine',g:.08},
+      dramatic:{bpm:55,notes:[164.8,196,220,246.9,293.7],wave:'sawtooth',g:.05},
+      friendly:{bpm:95,notes:[329.6,392,440,523.3,587.3],wave:'triangle',g:.07}
     };
-    const cfg=cfgs[style]||cfgs.chill,bl=60/cfg.bpm;
-    const mg=ac.createGain();mg.gain.value=cfg.g;
+    const cfg=cfgs[style]||cfgs.calm, bl=60/cfg.bpm;
+    const mg=ac.createGain(); mg.gain.value=cfg.g;
     const comp=ac.createDynamicsCompressor();
-    mg.connect(comp);comp.connect(dest);
+    mg.connect(comp); comp.connect(dest);
 
     let t=ac.currentTime+.1;
     while(t<ac.currentTime+dur){
       const note=cfg.notes[Math.floor(Math.random()*cfg.notes.length)];
-      const o=ac.createOscillator(),g=ac.createGain();
-      o.type=cfg.wave;o.frequency.value=note;
-      o.connect(g);g.connect(mg);
+      const o=ac.createOscillator(), g=ac.createGain();
+      o.type=cfg.wave; o.frequency.value=note;
+      o.connect(g); g.connect(mg);
       g.gain.setValueAtTime(0,t);
       g.gain.linearRampToValueAtTime(1,t+.05);
-      g.gain.exponentialRampToValueAtTime(.001,t+bl*.8);
-      o.start(t);o.stop(t+bl);
+      g.gain.exponentialRampToValueAtTime(.001,t+bl*.85);
+      o.start(t); o.stop(t+bl);
       t+=bl*(Math.random()>.7?.5:1);
     }
 
-    const chunks=[],rec=new MediaRecorder(dest.stream);
+    const chunks=[], rec=new MediaRecorder(dest.stream);
     rec.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data);};
-    rec.onstop=()=>res(new Blob(chunks,{type:'audio/webm'}));
+    rec.onstop=()=>{ ac.close(); res(new Blob(chunks,{type:'audio/webm'})); };
     rec.start();
-    setTimeout(()=>{rec.stop();ac.close();},(dur+1)*1000);
+    setTimeout(()=>rec.stop(),(dur+1)*1000);
   });
 }
 
-// ── MERGE ──
-async function mergeAll(vFile,vData,mBlob){
-  const ac=new(window.AudioContext||window.webkitAudioContext)();
-  const dest=ac.createMediaStreamDestination();
+// ── MERGE — fixed audio track ──
+async function mergeVideoAudio(videoFile, voiceBlob, musicBlob){
+  const ac = new (window.AudioContext||window.webkitAudioContext)();
+  const dest = ac.createMediaStreamDestination();
 
-  // Voice audio
+  // Decode and play voice
   try{
-    const vBuf=await ac.decodeAudioData(await vData.blob.arrayBuffer());
-    const vSrc=ac.createBufferSource();vSrc.buffer=vBuf;
-    const vG=ac.createGain();vG.gain.value=1;
-    vSrc.connect(vG);vG.connect(dest);
-    vSrc.start();
-  }catch(e){console.warn('Voice audio skip',e);}
+    const vBuf = await ac.decodeAudioData(await voiceBlob.arrayBuffer());
+    const vSrc = ac.createBufferSource();
+    vSrc.buffer = vBuf;
+    const vGain = ac.createGain();
+    vGain.gain.value = 1.0;
+    vSrc.connect(vGain);
+    vGain.connect(dest);
+    vSrc.start(0);
+  }catch(e){ console.warn('Voice decode failed:', e); }
 
-  // Music audio
-  let mSrc=null;
-  if(mBlob){
+  // Decode and play music
+  if(musicBlob){
     try{
-      const mBuf=await ac.decodeAudioData(await mBlob.arrayBuffer());
-      mSrc=ac.createBufferSource();mSrc.buffer=mBuf;
-      mSrc.loop=true;
-      const mG=ac.createGain();mG.gain.value=.2;
-      mSrc.connect(mG);mG.connect(dest);
-      mSrc.start();
-    }catch(e){console.warn('Music skip',e);}
+      const mBuf = await ac.decodeAudioData(await musicBlob.arrayBuffer());
+      const mSrc = ac.createBufferSource();
+      mSrc.buffer = mBuf;
+      mSrc.loop = true;
+      const mGain = ac.createGain();
+      mGain.gain.value = 0.18;
+      mSrc.connect(mGain);
+      mGain.connect(dest);
+      mSrc.start(0);
+    }catch(e){ console.warn('Music decode failed:', e); }
   }
 
-  // Video canvas
-  const vid=document.createElement('video');
-  vid.src=URL.createObjectURL(vFile);
-  vid.muted=true;
-  vid.playsInline=true;
-  await new Promise(r=>{vid.oncanplay=r;vid.load();});
-  await vid.play();
+  // Setup video canvas
+  const vid = document.createElement('video');
+  vid.src = URL.createObjectURL(videoFile);
+  vid.muted = true;
+  vid.playsInline = true;
+  vid.crossOrigin = 'anonymous';
 
-  const c=document.createElement('canvas');
-  c.width=1280;c.height=720;
-  const ctx=c.getContext('2d');
+  await new Promise((res,rej)=>{
+    vid.oncanplaythrough = res;
+    vid.onerror = rej;
+    vid.load();
+  });
 
-  const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm']
-    .find(t=>MediaRecorder.isTypeSupported(t))||'video/webm';
+  const canvas = document.createElement('canvas');
+  canvas.width = 1280;
+  canvas.height = 720;
+  const ctx = canvas.getContext('2d');
 
-  const stream=new MediaStream([
-    ...c.captureStream(30).getVideoTracks(),
-    ...dest.stream.getAudioTracks()
+  // Combine video + audio tracks
+  const videoStream = canvas.captureStream(30);
+  const audioTracks = dest.stream.getAudioTracks();
+  const combined = new MediaStream([
+    ...videoStream.getVideoTracks(),
+    ...audioTracks
   ]);
 
-  const rec=new MediaRecorder(stream,{mimeType:mime});
-  const chunks=[];
-  rec.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data);};
+  const mime = ['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm']
+    .find(t=>MediaRecorder.isTypeSupported(t)) || 'video/webm';
 
-  return new Promise(res=>{
-    rec.onstop=()=>{
-      if(mSrc)try{mSrc.stop();}catch(e){}
+  const rec = new MediaRecorder(combined, {mimeType: mime, videoBitsPerSecond: 2500000});
+  const chunks = [];
+  rec.ondataavailable = e => { if(e.data.size > 0) chunks.push(e.data); };
+
+  return new Promise((resolve, reject)=>{
+    rec.onstop = () => {
       ac.close();
-      res(new Blob(chunks,{type:'video/webm'}));
+      resolve(new Blob(chunks, {type: 'video/webm'}));
     };
 
-    function draw(){
-      if(!vid.paused&&!vid.ended){
-        ctx.drawImage(vid,0,0,c.width,c.height);
-        requestAnimationFrame(draw);
+    function drawFrame(){
+      if(!vid.paused && !vid.ended){
+        ctx.drawImage(vid, 0, 0, canvas.width, canvas.height);
+        requestAnimationFrame(drawFrame);
       }
     }
 
     rec.start(200);
-    draw();
+    vid.play().then(()=>{
+      drawFrame();
+    });
 
-    vid.onended=()=>setTimeout(()=>{if(rec.state==='recording')rec.stop();},500);
-    setTimeout(()=>{if(rec.state==='recording')rec.stop();},120000);
+    vid.onended = () => {
+      setTimeout(()=>{ if(rec.state==='recording') rec.stop(); }, 600);
+    };
+
+    // Safety timeout
+    setTimeout(()=>{ if(rec.state==='recording') rec.stop(); }, 3*60*1000);
   });
 }
 
 // ── RESULT ──
 function showResult(){
-  const rc=document.getElementById('resCard');rc.style.display='block';
-  document.getElementById('resVideo').src=URL.createObjectURL(finalBlob);
-  document.getElementById('scriptBox').textContent=genScript;
-  document.getElementById('genBtn').disabled=false;
+  const rc = document.getElementById('resCard');
+  rc.style.display = 'block';
+  const url = URL.createObjectURL(finalBlob);
+  const rv = document.getElementById('resVideo');
+  rv.src = url;
+  document.getElementById('scriptBox').textContent = genScript;
+  document.getElementById('genBtn').disabled = false;
   rc.scrollIntoView({behavior:'smooth'});
-  toast('🎉 Video ready!','ok');
+  toast('🎉 Video ready! Tap Download','ok');
 }
+
 function dlVideo(){
-  if(!finalBlob)return;
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(finalBlob);
-  a.download='voiceover_'+Date.now()+'.webm';
-  a.click();toast('Downloading...','ok');
+  if(!finalBlob) return;
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(finalBlob);
+  a.download = 'voiceover_'+Date.now()+'.webm';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  toast('Downloading...','ok');
 }
+
 function toggleScript(){
-  const b=document.getElementById('scriptBox');
-  b.style.display=b.style.display==='block'?'none':'block';
+  const b = document.getElementById('scriptBox');
+  b.style.display = b.style.display==='block' ? 'none' : 'block';
 }
-function playVoice(){
-  if(!genScript)return;
-  const u=new SpeechSynthesisUtterance(genScript);
-  u.lang=document.getElementById('langSel').value;
+
+function playVoiceOnly(){
+  if(!genScript) return;
   speechSynthesis.cancel();
-  setTimeout(()=>speechSynthesis.speak(u),100);
+  const u = new SpeechSynthesisUtterance(genScript);
+  u.lang = document.getElementById('langSel').value;
+  u.rate = 0.88;
+  setTimeout(()=>speechSynthesis.speak(u), 100);
   toast('🔊 Playing...','ok');
 }
+
 function resetApp(){
-  selVideo=null;finalBlob=null;genScript='';
+  selVideo=null; finalBlob=null; genScript='';
+  clickTimes=[]; autoDetected=false;
   document.getElementById('videoInput').value='';
   document.getElementById('vPreview').style.display='none';
   document.getElementById('vinfo').style.display='none';
@@ -639,43 +805,49 @@ function resetApp(){
   document.getElementById('resCard').style.display='none';
   document.getElementById('genBtn').disabled=false;
   document.getElementById('topicInput').value='';
+  document.getElementById('cdStyle').textContent='Tap to detect...';
+  document.getElementById('cdStyle').className='cd-style';
+  document.getElementById('cdCount').textContent='0 taps';
+  document.getElementById('cdFill').style.width='0%';
+  document.getElementById('autoTag').textContent='AUTO';
   document.querySelectorAll('.ps').forEach(s=>s.classList.remove('active','done'));
   for(let i=1;i<=4;i++){const e=document.getElementById('s'+i+'i');if(e)e.innerHTML='';}
-  setBar(0);setLbl('');setStep(1);
+  setBar(0); setLbl(''); setStep(1);
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ── COMPLETED VIDEOS ──
+// ── COMPLETED ──
 function saveCV(){
-  if(!finalBlob)return;
-  const reader=new FileReader();
-  reader.onload=()=>{
+  if(!finalBlob) return;
+  const reader = new FileReader();
+  reader.onload = () => {
     try{
-      const vids=getCVs();
+      const vids = getCVs();
       vids.push({
         id:'v'+Date.now(),
-        name:selVideo?.name||'video',
-        script:genScript,
-        lang:document.getElementById('langSel').value,
-        style:document.getElementById('styleSel').value,
-        music:curMusic,
-        created:Date.now(),
-        expires:Date.now()+EXPIRE,
-        data:reader.result
+        name: selVideo?.name||'video',
+        script: genScript,
+        lang: document.getElementById('langSel').value,
+        style: curStyle,
+        created: Date.now(),
+        expires: Date.now()+EXPIRE,
+        data: reader.result
       });
-      while(vids.length>8)vids.shift();
-      localStorage.setItem('vs_vids',JSON.stringify(vids));
-    }catch(e){console.warn('Save failed',e);}
+      while(vids.length>8) vids.shift();
+      localStorage.setItem('vs_vids', JSON.stringify(vids));
+    }catch(e){ console.warn('Save failed',e); }
   };
   reader.readAsDataURL(finalBlob);
 }
-function getCVs(){try{return JSON.parse(localStorage.getItem('vs_vids')||'[]');}catch{return[];}}
+
+function getCVs(){ try{return JSON.parse(localStorage.getItem('vs_vids')||'[]');}catch{return[];} }
 function cleanExpired(){
   try{
     const v=getCVs().filter(x=>x.expires>Date.now());
     localStorage.setItem('vs_vids',JSON.stringify(v));
   }catch(e){}
 }
+
 function renderCV(){
   cleanExpired();
   const vids=getCVs();
@@ -688,37 +860,40 @@ function renderCV(){
   list.innerHTML='';
   [...vids].reverse().forEach(v=>{
     const d=Math.ceil((v.expires-Date.now())/(24*60*60*1000));
-    const div=document.createElement('div');div.className='cv-item';
+    const div=document.createElement('div'); div.className='cv-item';
     div.innerHTML=`<video class="cv-thumb" src="${v.data}" muted playsinline></video>
     <div class="cv-info">
       <div class="cv-name">${v.name}</div>
       <div class="cv-meta">${new Date(v.created).toLocaleDateString()} • ${v.lang.startsWith('hi')?'Hindi':'English'} • ${v.style}</div>
       <div class="cv-exp">⏳ ${d} day${d!==1?'s':''} left</div>
       <div class="cv-btns">
-        <button class="cv-btn" onclick="dlCV('${v.id}')">⬇️</button>
-        <button class="cv-btn" onclick="playCV('${v.id}')">🔊</button>
-        <button class="cv-btn del" onclick="delCV('${v.id}')">🗑️</button>
+        <button class="cv-btn" onclick="dlCV('${v.id}')">⬇️ Download</button>
+        <button class="cv-btn" onclick="playCV('${v.id}')">🔊 Voice</button>
+        <button class="cv-btn del" onclick="delCV('${v.id}')">🗑️ Delete</button>
       </div>
     </div>`;
     list.appendChild(div);
   });
 }
+
 function dlCV(id){
-  const v=getCVs().find(x=>x.id===id);if(!v)return;
-  const a=document.createElement('a');a.href=v.data;a.download='vo_'+id+'.webm';a.click();
+  const v=getCVs().find(x=>x.id===id); if(!v) return;
+  const a=document.createElement('a'); a.href=v.data; a.download='vo_'+id+'.webm'; a.click();
 }
 function playCV(id){
-  const v=getCVs().find(x=>x.id===id);if(!v||!v.script)return;
-  const u=new SpeechSynthesisUtterance(v.script);u.lang=v.lang;
-  speechSynthesis.cancel();setTimeout(()=>speechSynthesis.speak(u),100);
+  const v=getCVs().find(x=>x.id===id); if(!v||!v.script) return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(v.script); u.lang=v.lang; u.rate=0.88;
+  setTimeout(()=>speechSynthesis.speak(u),100);
+  toast('🔊 Playing...','ok');
 }
 function delCV(id){
   localStorage.setItem('vs_vids',JSON.stringify(getCVs().filter(x=>x.id!==id)));
-  renderCV();toast('Deleted','ok');
+  renderCV(); toast('Deleted','ok');
 }
 function clearAll(){
-  if(!confirm('Delete all saved videos?'))return;
-  localStorage.removeItem('vs_vids');renderCV();toast('Cleared','ok');
+  if(!confirm('Delete all saved videos?')) return;
+  localStorage.removeItem('vs_vids'); renderCV(); toast('Cleared','ok');
 }
 
 // ── TOAST ──
@@ -731,4 +906,3 @@ function toast(msg,type=''){
 </script>
 </body>
 </html>
-  
